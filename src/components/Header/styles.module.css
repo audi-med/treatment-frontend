@@ -11,9 +11,7 @@
 .button {
     background-color: #f5f5f5;
     border: none;
-    border-radius: 0.25rem;
-    color: #5f5f5f;
-    font-weight: bold;
-    padding-block: 0.5rem;
-    padding-inline: 0.75rem;
+    border-radius: 50%;
+    height: 2rem;
+    width: 2rem;
 }
