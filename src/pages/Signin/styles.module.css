@@ -1,0 +1,98 @@
+.container {
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 3.5rem);
+    padding: 2.5rem;
+}
+
+.contentArea {
+    background-color: #fff;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    width: 100%;
+    max-width: 24rem;
+}
+
+h1 {
+    font-size: 1.5rem;
+}
+
+.top, h1 {
+    margin-bottom: 1.5rem;
+}
+
+p {
+    color: #000;
+}
+
+h1, p {
+    text-align: center;
+}
+
+a {
+    color: #164755;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a, .primaryButton, p {
+    font-size: 0.875rem;
+}
+
+.inputField {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+h1, label {
+    color: #000;
+}
+
+.input {
+    background-color: transparent;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+    width: 100%;
+}
+
+.primaryButton {
+    background-color: #164755;
+    border: none;
+    font-weight: bold;
+    border-radius: 0.25rem;
+    width: 100%;
+    color: #fff;
+    cursor: pointer;
+}
+
+.input, .primaryButton {
+    padding: 0.75rem;
+}
+
+.inputField, .link, .primaryButton, form p {
+    margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        background-color: #fff;
+        align-items: unset;
+    }
+
+    .contentArea {
+        background-color: transparent;
+        border-radius: 0;
+        box-shadow: none;
+    }
+}
