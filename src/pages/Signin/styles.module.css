@@ -72,7 +72,7 @@ h1, label {
     padding-inline: 1rem;
 }
 
-.inputField, form .link, form p {
+.inputField, .form .link, .form p {
     margin-bottom: 1rem;
 }
 

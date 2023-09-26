@@ -6,7 +6,7 @@ const Signup = () => {
         <div className={styles.contentArea}>
             <div className={styles.top}>
                 <h1>Cadastrar-se</h1>
-                <form>
+                <form className={styles.form}>
                     <div className={styles.inputField}>
                         <label for="name-input">Nome de usuário</label>
                         <input className={styles.input} type="text" required/>
