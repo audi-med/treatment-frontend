@@ -1,12 +1,3 @@
-.container {
-    background-color: #f5f5f5;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: calc(100vh - 3.5rem);
-    padding: 2.5rem;
-}
-
 .contentArea {
     background-color: #fff;
     border: none;
@@ -32,16 +23,16 @@ h1, p {
     text-align: center;
 }
 
-a {
+.link {
     color: #164755;
     text-decoration: none;
 }
 
-a:hover {
+.link:hover {
     text-decoration: underline;
 }
 
-a, .primaryButton, p {
+.link, .primaryButton, p {
     font-size: 0.875rem;
 }
 
@@ -77,10 +68,11 @@ h1, label {
 }
 
 .input, .primaryButton {
-    padding: 0.75rem;
+    padding-block: 0.75rem;
+    padding-inline: 1rem;
 }
 
-.inputField, .link, .primaryButton, form p {
+.inputField, form p {
     margin-bottom: 1rem;
 }
 

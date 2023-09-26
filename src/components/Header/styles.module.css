@@ -1,4 +1,4 @@
-.container {
+.contentArea {
     align-items: center;
     background-color: #164755;
     color: #fff;
@@ -11,7 +11,19 @@
 .button {
     background-color: #f5f5f5;
     border: none;
+    border-radius: 0.25rem;
+    color: #000;
+    font-weight: bold;
+    padding-block: 0.5rem;
+    padding-inline: 0.75rem;
+    text-decoration: none;
+    font-size: 0.875rem;
+}
+
+/*.profileButton {
+    background-color: #f5f5f5;
+    border: none;
     border-radius: 50%;
     height: 2rem;
     width: 2rem;
-}
+}*/

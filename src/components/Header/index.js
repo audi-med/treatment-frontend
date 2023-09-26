@@ -3,9 +3,9 @@ import styles from "./styles.module.css";
 
 const Header = () => {
     return(
-        <header className={styles.container}>
+        <header className={styles.contentArea}>
             <img src="" alt="Logo"/>
-            <button className={styles.button}></button>
+            <a className={styles.button} href="/signin">Entrar</a>
         </header>
     )
 }

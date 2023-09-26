@@ -15,7 +15,7 @@ const Home = () => {
     ]
 
     return (
-        <main className={styles.container}>
+        <React.Fragment>
             {data.length  > 0 ? (
                 <React.Fragment>
                     <div className={styles.gridContainer}>
@@ -36,11 +36,9 @@ const Home = () => {
                     </div>
                 </React.Fragment>
             ) : (
-                <div className={styles.messageArea}>
-                    <p>Cadastre pacientes para visualiza-los aqui.</p>
-                </div>
+                <p>Cadastre pacientes para visualiza-los aqui.</p>
             )}
-        </main>
+        </React.Fragment>
     )
 }
 
