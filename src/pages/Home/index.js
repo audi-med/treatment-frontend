@@ -1,26 +1,16 @@
 import React from "react";
 import styles from "./styles.module.css";
 import { Link } from "react-router-dom";
+import patients from "../../util";
 
 const Home = () => {
-    const data = [
-        {
-            slug: '0',
-            name: 'João'
-        },
-        {
-            slug: '1',
-            name: 'Maria'
-        }
-    ]
-
     return (
         <React.Fragment>
-            {data.length  > 0 ? (
+            {patients.length  > 0 ? (
                 <React.Fragment>
                     <div className={styles.gridContainer}>
                         <div className={styles.grid}>
-                            {data.map((item) => (
+                            {patients.map((item) => (
                                 <Link to={`/patient/${item.slug}`} key={item.slug} className={styles.cardLink}>
                                     <div className={styles.card}>
                                         {item.name}         
@@ -30,9 +20,9 @@ const Home = () => {
                         </div>
                     </div>
                     <div className={styles.buttonArea}>
-                        <button className={styles.primaryButton}>
+                        <a className={styles.primaryButton} href="/register-patient">
                             Cadastrar paciente
-                        </button>
+                        </a>
                     </div>
                 </React.Fragment>
             ) : (

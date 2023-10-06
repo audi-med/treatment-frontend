@@ -1,11 +1,20 @@
 import React from "react";
 import styles from "./styles.module.css";
+import patients from "../../util";
 
-const Signin = () => {
+const RegisterPatient = () => {
+    const registerPatient = () => {
+        
+    }
+
     return (
         <div className={styles.contentArea}>
-            <h1>Entrar</h1>
+            <h1>Cadastrar paciente</h1>
             <form className={styles.form}>
+                <div className={styles.inputField}>
+                    <label htmlFor="name-input">Nome completo</label>
+                    <input className={styles.input} type="text" required/>
+                </div>
                 <div className={styles.inputField}>
                     <label htmlFor="email-input">E-mail</label>
                     <input className={styles.input} type="text" required/>
@@ -14,13 +23,10 @@ const Signin = () => {
                     <label htmlFor="password-input">Senha</label>
                     <input className={styles.input} type="password" required/>
                 </div>
-                <div className={styles.link}>
-                    <a className={styles.link} href="">Esqueceu a senha?</a>
-                </div>
-                <button className={styles.primaryButton} type="submit">Entrar</button>
+                <button className={styles.primaryButton} type="submit">Cadastrar</button>
             </form>
         </div>
     )
 }
 
-export default Signin
+export default RegisterPatient

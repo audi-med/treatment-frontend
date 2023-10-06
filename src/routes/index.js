@@ -2,7 +2,7 @@ import { BrowserRouter as Router,Routes,Route } from "react-router-dom";
 import Home from "../pages/Home";
 import Patient from "../pages/Patient";
 import Signin from "../pages/Signin";
-import Signup from "../pages/Signup";
+import RegisterPatient from "../pages/RegisterPatient";
 
 const PagesRoutes = () => {
     return (
@@ -11,7 +11,7 @@ const PagesRoutes = () => {
                 <Route path="/" element={<Home/>}/>
                 <Route path="/patient/:slug" element={<Patient/>}/>
                 <Route path="/signin" element={<Signin/>}/>
-                <Route path="/signup" element={<Signup/>}/>
+                <Route path="/register-patient" element={<RegisterPatient/>}/>
             </Routes>
         </Router>
     )
