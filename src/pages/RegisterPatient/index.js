@@ -1,12 +1,7 @@
 import React from "react";
 import styles from "./styles.module.css";
-import patients from "../../util";
 
 const RegisterPatient = () => {
-    const registerPatient = () => {
-        
-    }
-
     return (
         <div className={styles.contentArea}>
             <h1>Cadastrar paciente</h1>
