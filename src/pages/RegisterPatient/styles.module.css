@@ -26,6 +26,10 @@ h1 {
     margin-bottom: 1.5rem;
 }
 
+.errorMessage {
+    color: #f00;
+}
+
 p {
     color: #000;
 }
