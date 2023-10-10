@@ -11,6 +11,7 @@ const Patient = () => {
     return (
         <div className={styles.contentArea}>
             <p>Nome: {patient.name}</p>
+            <p>CPF: {patient.cpf}</p>
         </div>
     )
 }

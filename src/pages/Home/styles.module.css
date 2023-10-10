@@ -1,3 +1,20 @@
+.container {
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2.5rem;
+    height: calc(100vh - 3.5rem);
+    padding: 2.5rem;
+}
+
+.contentArea {
+    align-items: center;
+    display: flex;
+    height: 100%;
+}
+
 .gridContainer {
     height: 100%;
     overflow-y: auto;

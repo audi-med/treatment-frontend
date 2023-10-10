@@ -36,14 +36,3 @@
     transform: rotate(360deg);
   }
 }
-
-.container {
-  background-color: #f5f5f5;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 2.5rem;
-  height: calc(100vh - 3.5rem);
-  padding: 2.5rem;
-}

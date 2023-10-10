@@ -21,9 +21,7 @@ function App() {
         </a>
       </header>*/}
       <Header/>
-      <main className="container">
-        <PagesRoutes/>
-      </main>
+      <PagesRoutes/>
     </div>
   );
 }
