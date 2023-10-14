@@ -29,9 +29,9 @@ const Home = () => {
                 <div className={styles.gridContainer}>
                     <div className={styles.grid}>
                         {patients.map((patient) => (
-                            <Link to={`/patient/${patient.slug}`} key={patient.slug} className={styles.cardLink}>
+                            <Link to={`/patient/${patient.id}`} key={patient.id} className={styles.cardLink}>
                                 <div className={styles.card}>
-                                    {patient.name}         
+                                    {patient.nome}         
                                 </div>
                             </Link>
                         ))}
