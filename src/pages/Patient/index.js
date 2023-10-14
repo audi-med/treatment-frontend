@@ -1,7 +1,6 @@
 import { React, useState, useEffect } from "react";
 import styles from "./styles.module.css";
 import { useParams } from "react-router-dom";
-//import patients from "../../util/Patients";
 
 const Patient = () => {
     const [patients, setPatients] = useState([]);
@@ -24,13 +23,13 @@ const Patient = () => {
         consult()
     }, [])
 
-    const {slug} = useParams();
+    const {id} = useParams();
 
-    const patient = patients.find(item => item.slug === slug);
+    const patient = patients.find(item => item.id === id);
 
     return (
         <div className={styles.contentArea}>
-            <p>Nome: {patient.name}</p>
+            <p>Nome: {patient.nome}</p>
             <p>CPF: {patient.cpf}</p>
         </div>
     )
