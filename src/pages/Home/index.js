@@ -24,7 +24,7 @@ const Home = () => {
         consult()
     }, [])
 
-    if (patients.length  > 0) {
+    if (patients.length > 0) {
         return (
             <div className={styles.container}>
                 <div className={styles.gridContainer}>
