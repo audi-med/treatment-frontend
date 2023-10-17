@@ -3,7 +3,7 @@ import styles from "./styles.module.css";
 import { useParams } from "react-router-dom";
 
 const Patient = () => {
-    const [patients, setPatients] = useState([]);
+    const [patient, setPatient] = useState([]);
     const [errorMessage, setErrorMessage] = useState(null);
 
     const {id} = useParams();
@@ -17,7 +17,7 @@ const Patient = () => {
                 }
                 const data = await response.json()
                 console.log(JSON.stringify(data))
-                setPatients(data)
+                setPatient(data)
             } catch (error) {
                 setErrorMessage(error.message)
             }
