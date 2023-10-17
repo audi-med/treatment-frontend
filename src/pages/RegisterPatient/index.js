@@ -37,9 +37,7 @@ const RegisterPatient = () => {
             }
             setMessage("Paciente cadastrado com sucesso!")
         } catch (error) {
-            setMessage(
-                "Erro ao cadastrar o paciente. Verifique os dados informados."
-            )
+            setMessage("Erro ao cadastrar o paciente. Verifique os dados informados.")
         }
     }
 
