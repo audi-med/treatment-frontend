@@ -23,7 +23,7 @@ const Patient = () => {
             }
         }
         consult()
-    }, [])
+    }, [id])
 
     return (
         <div className={styles.contentArea}>
