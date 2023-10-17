@@ -27,7 +27,7 @@ const RegisterPatient = () => {
         }
 
         try {
-            const response = await fetch("http://localhost:8080/api/v1/pacientes", {
+            const response = await fetch("http://localhost:8080/api/v1/pacientes/cadastro", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
