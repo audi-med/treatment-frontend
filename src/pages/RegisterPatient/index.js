@@ -21,7 +21,9 @@ const RegisterPatient = () => {
             numeroDeTelefone,
             endereco,
             email,
-            senha
+            senha,
+            nomeDoResponsavel,
+            cpfDoResponsavel
         }
 
         try {
