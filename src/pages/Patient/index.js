@@ -6,10 +6,12 @@ const Patient = () => {
     const [patients, setPatients] = useState([]);
     const [errorMessage, setErrorMessage] = useState(null);
 
+    const {id} = useParams();
+    
     useEffect(() => {
         const consult = async () => {
             try {
-                const response = await fetch("http://localhost:8080/api/v1/pacientes")
+                const response = await fetch("http://localhost:8080/api/v1/pacientes/" + id)
                 if (!response.ok) {
                     throw new Error()
                 }
@@ -22,10 +24,6 @@ const Patient = () => {
         }
         consult()
     }, [])
-
-    const {id} = useParams();
-
-    const patient = patients.find(item => item.id === id);
 
     return (
         <div className={styles.contentArea}>
