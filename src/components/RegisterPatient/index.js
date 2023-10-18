@@ -48,50 +48,52 @@ const RegisterPatient = ({active}) => {
     }
 
     return (
-        <div className={styles.container}>
+        <div>
             <div className={styles.shadow} onClick={closeRegisterPatient}></div>
-            <div className={styles.contentArea}>
-                <h1>Cadastrar paciente</h1>
-                {message && <p className={styles.errorMessage}>{message}</p>}
-                <form className={styles.form}>
-                    <div className={styles.inputField}>
-                        <label htmlFor="name-input">Nome completo</label>
-                        <input className={styles.input} onChange={(e) => setNome(e.target.value)} type="text" required/>
-                    </div>
-                    <div className={styles.inputField}>
-                        <label htmlFor="cpf-input">CPF</label>
-                        <input className={styles.input} onChange={(e) => setCPF(e.target.value)} type="text" required/>
-                    </div>
-                    <div className={styles.inputField}>
-                        <label htmlFor="birthdate-input">Data de nascimento</label>
-                        <input className={styles.input} onChange={(e) => setDataDeNascimento(e.target.value)} type="text" required/>
-                    </div>
-                    <div className={styles.inputField}>
-                        <label htmlFor="phone-number-input">Número de telefone</label>
-                        <input className={styles.input} onChange={(e) => setNumeroDeTelefone(e.target.value)} type="text" required/>
-                    </div>
-                    <div className={styles.inputField}>
-                        <label htmlFor="address-input">Endereço</label>
-                        <input className={styles.input} onChange={(e) => setEndereco(e.target.value)} type="text" required/>
-                    </div>
-                    <div className={styles.inputField}>
-                        <label htmlFor="email-input">E-mail</label>
-                        <input className={styles.input} onChange={(e) => setEmail(e.target.value)} type="text" required/>
-                    </div>
-                    <div className={styles.inputField}>
-                        <label htmlFor="password-input">Senha</label>
-                        <input className={styles.input} onChange={(e) => setSenha(e.target.value)} type="password" required/>
-                    </div>
-                    <div className={styles.inputField}>
-                        <label htmlFor="responsible-name-input">Nome do responsável</label>
-                        <input className={styles.input} onChange={(e) => setNomeDoResponsavel(e.target.value)} type="password" required/>
-                    </div>
-                    <div className={styles.inputField}>
-                        <label htmlFor="responsible-cpf-input">CPF do responsável</label>
-                        <input className={styles.input} onChange={(e) => setCPFDoResponsavel(e.target.value)} type="password" required/>
-                    </div>
-                    <button className={styles.primaryButton} onClick={registerPatient} type="submit">Cadastrar</button>
-                </form>
+            <div className={styles.container}>
+                <div className={styles.contentArea}>
+                    <h1>Cadastrar paciente</h1>
+                    {message && <p className={styles.errorMessage}>{message}</p>}
+                    <form className={styles.form}>
+                        <div className={styles.inputField}>
+                            <label htmlFor="name-input">Nome completo</label>
+                            <input className={styles.input} onChange={(e) => setNome(e.target.value)} type="text" required/>
+                        </div>
+                        <div className={styles.inputField}>
+                            <label htmlFor="cpf-input">CPF</label>
+                            <input className={styles.input} onChange={(e) => setCPF(e.target.value)} type="text" required/>
+                        </div>
+                        <div className={styles.inputField}>
+                            <label htmlFor="birthdate-input">Data de nascimento</label>
+                            <input className={styles.input} onChange={(e) => setDataDeNascimento(e.target.value)} type="text" required/>
+                        </div>
+                        <div className={styles.inputField}>
+                            <label htmlFor="phone-number-input">Número de telefone</label>
+                            <input className={styles.input} onChange={(e) => setNumeroDeTelefone(e.target.value)} type="text" required/>
+                        </div>
+                        <div className={styles.inputField}>
+                            <label htmlFor="address-input">Endereço</label>
+                            <input className={styles.input} onChange={(e) => setEndereco(e.target.value)} type="text" required/>
+                        </div>
+                        <div className={styles.inputField}>
+                            <label htmlFor="email-input">E-mail</label>
+                            <input className={styles.input} onChange={(e) => setEmail(e.target.value)} type="text" required/>
+                        </div>
+                        <div className={styles.inputField}>
+                            <label htmlFor="password-input">Senha</label>
+                            <input className={styles.input} onChange={(e) => setSenha(e.target.value)} type="password" required/>
+                        </div>
+                        <div className={styles.inputField}>
+                            <label htmlFor="responsible-name-input">Nome do responsável</label>
+                            <input className={styles.input} onChange={(e) => setNomeDoResponsavel(e.target.value)} type="password" required/>
+                        </div>
+                        <div className={styles.inputField}>
+                            <label htmlFor="responsible-cpf-input">CPF do responsável</label>
+                            <input className={styles.input} onChange={(e) => setCPFDoResponsavel(e.target.value)} type="password" required/>
+                        </div>
+                        <button className={styles.primaryButton} onClick={registerPatient} type="submit">Cadastrar</button>
+                    </form>
+                </div>
             </div>
         </div>
     )
