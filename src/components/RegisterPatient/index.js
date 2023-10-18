@@ -2,8 +2,10 @@ import { React, useState } from "react";
 import styles from "./styles.module.css";
 
 const RegisterPatient = ({active}) => {
-    const closeRegisterPatient =()=>{
-        active(false)
+    const closeRegisterPatient = (e) => {
+        if (e.target === e.currentTarget) {
+            active(false)
+        }
     }
 
     const [nome, setNome] = useState("");
@@ -48,9 +50,9 @@ const RegisterPatient = ({active}) => {
     }
 
     return (
-        <div>
-            <div className={styles.shadow} onClick={closeRegisterPatient}></div>
-            <div className={styles.container}>
+        <div className={styles.mainContainer}>
+            <div className={styles.shadow}></div>
+            <div className={styles.container} onClick={closeRegisterPatient}>
                 <div className={styles.contentArea}>
                     <h1>Cadastrar paciente</h1>
                     {message && <p className={styles.errorMessage}>{message}</p>}
