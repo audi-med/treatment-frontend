@@ -1,5 +1,6 @@
 import { React, useState } from "react";
 import styles from "./styles.module.css";
+import { Icon } from '@iconify/react';
 
 const RegisterPatient = ({active}) => {
     const closeRegisterPatient = (e) => {
@@ -54,6 +55,11 @@ const RegisterPatient = ({active}) => {
             <div className={styles.shadow}></div>
             <div className={styles.container} onClick={closeRegisterPatient}>
                 <div className={styles.contentArea}>
+                    <div className={styles.topArea}>
+                        <button className={styles.button} onClick={closeRegisterPatient}>
+                            <Icon icon="tabler:x" />
+                        </button>
+                    </div>
                     <h1>Cadastrar paciente</h1>
                     {message && <p className={styles.errorMessage}>{message}</p>}
                     <form className={styles.form}>
