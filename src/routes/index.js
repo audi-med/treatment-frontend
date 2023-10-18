@@ -1,7 +1,7 @@
 import { BrowserRouter as Router,Routes,Route } from "react-router-dom";
+import Signin from "../pages/Signin";
 import ViewPatients from "../pages/ViewPatients";
 import ViewPatient from "../pages/ViewPatient";
-import Signin from "../pages/Signin";
 
 const PagesRoutes = () => {
     return (
