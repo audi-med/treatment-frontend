@@ -1,0 +1,62 @@
+.container {
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2.5rem;
+    height: calc(100vh - 3.5rem);
+    padding: 2.5rem;
+}
+
+.contentArea {
+    align-items: center;
+    display: flex;
+    height: 100%;
+}
+
+.gridContainer {
+    height: 100%;
+    overflow-y: auto;
+    width: 100%;
+}
+
+.grid {
+    display: grid;
+    grid-gap: 2.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+    width: 100%;
+}
+
+.card {
+    align-items: center;
+    background-color: #fff;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.25rem;
+    height: 15rem;
+    justify-content: center;
+    padding: 1.5rem;
+}
+
+.cardLink {
+    color: inherit;
+    text-decoration: none;
+}
+
+.buttonArea {
+    width: 100%;
+}
+
+.primaryButton {
+    background-color: #164755;
+    border: none;
+    border-radius: 0.25rem;
+    color: #fff;
+    font-weight: bold;
+    padding-block: 0.75rem;
+    padding-inline: 1rem;
+    font-size: 0.875rem;
+    text-decoration: none;
+}
