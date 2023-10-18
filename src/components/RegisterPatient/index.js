@@ -1,7 +1,11 @@
 import { React, useState } from "react";
 import styles from "./styles.module.css";
 
-const RegisterPatient = () => {
+const RegisterPatient = ({active}) => {
+    const closeRegisterPatient =()=>{
+        active(false)
+    }
+
     const [nome, setNome] = useState("");
     const [cpf, setCPF] = useState("");
     const [dataDeNascimento, setDataDeNascimento] = useState("");
@@ -45,6 +49,7 @@ const RegisterPatient = () => {
 
     return (
         <div className={styles.container}>
+            <div className={styles.shadow} onClick={closeRegisterPatient}></div>
             <div className={styles.contentArea}>
                 <h1>Cadastrar paciente</h1>
                 {message && <p className={styles.errorMessage}>{message}</p>}

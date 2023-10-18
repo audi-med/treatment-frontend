@@ -1,6 +1,7 @@
 import { React, useState, useEffect } from "react";
 import styles from "./styles.module.css";
 import { Link } from "react-router-dom";
+import RegisterPatient from "../../components/RegisterPatient";
 
 const ViewPatients = () => {
     const [patients, setPatients] = useState([]);
@@ -23,6 +24,10 @@ const ViewPatients = () => {
         consult()
     }, [])
 
+    const [registerPatient, setRegisterPatient] = useState(false)
+
+    const showRegisterPatient = () => setRegisterPatient(!registerPatient)
+
     if (patients.length > 0) {
         return (
             <div className={styles.container}>
@@ -38,10 +43,11 @@ const ViewPatients = () => {
                     </div>
                 </div>
                 <div className={styles.buttonArea}>
-                    <a className={styles.primaryButton} href="/register-patient">
+                    <button className={styles.primaryButton} onClick={showRegisterPatient}>
                         Cadastrar paciente
-                    </a>
+                    </button>
                 </div>
+                {registerPatient && <RegisterPatient active={setRegisterPatient}/>}
             </div>
         )
     } else {
@@ -51,10 +57,11 @@ const ViewPatients = () => {
                     <p>Cadastre pacientes para visualiza-los aqui.</p>
                 </div>
                 <div className={styles.buttonArea}>
-                    <a className={styles.primaryButton} href="/register-patient">
+                    <button className={styles.primaryButton} onClick={showRegisterPatient}>
                         Cadastrar paciente
-                    </a>
+                    </button>
                 </div>
+                {registerPatient && <RegisterPatient active={setRegisterPatient}/>}
             </div>
         )
     }
