@@ -1,7 +1,7 @@
 import { React, useState } from "react";
 import styles from "./styles.module.css";
 
-const ChangePatient = ({active}) => {
+const EditPatient = ({active}) => {
     const closeRegisterPatient = (e) => {
         if (e.target === e.currentTarget) {
             active(false)
@@ -93,7 +93,7 @@ const ChangePatient = ({active}) => {
                             <label htmlFor="responsible-cpf-input">CPF do responsável</label>
                             <input className={styles.input} onChange={(e) => setCPFDoResponsavel(e.target.value)} type="password" required/>
                         </div>
-                        <button className={styles.primaryButton} onClick={registerPatient} type="submit">Cadastrar</button>
+                        <button className={styles.primaryButton} onClick={registerPatient} type="submit">Salvar</button>
                     </form>
                 </div>
             </div>
@@ -101,4 +101,4 @@ const ChangePatient = ({active}) => {
     )
 }
 
-export default ChangePatient
+export default EditPatient

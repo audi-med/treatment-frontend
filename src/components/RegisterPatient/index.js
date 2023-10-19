@@ -3,10 +3,14 @@ import styles from "./styles.module.css";
 import { Icon } from '@iconify/react';
 
 const RegisterPatient = ({active}) => {
-    const closeRegisterPatient = (e) => {
+    const closeByBackground = (e) => {
         if (e.target === e.currentTarget) {
             active(false)
         }
+    }
+
+    const closeByButton = () => {
+        active(false)
     }
 
     const [nome, setNome] = useState("");
@@ -53,10 +57,10 @@ const RegisterPatient = ({active}) => {
     return (
         <div className={styles.mainContainer}>
             <div className={styles.shadow}></div>
-            <div className={styles.container} onClick={closeRegisterPatient}>
+            <div className={styles.container} onClick={closeByBackground}>
                 <div className={styles.contentArea}>
                     <div className={styles.topArea}>
-                        <button className={styles.button} onClick={closeRegisterPatient}>
+                        <button className={styles.button} onClick={closeByButton}>
                             <Icon icon="tabler:x" />
                         </button>
                     </div>
