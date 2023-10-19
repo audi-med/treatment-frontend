@@ -1,11 +1,16 @@
 import { React, useState } from "react";
 import styles from "./styles.module.css";
+import { Icon } from '@iconify/react';
 
 const EditPatient = ({active}) => {
-    const closeRegisterPatient = (e) => {
+    const closeByBackground = (e) => {
         if (e.target === e.currentTarget) {
             active(false)
         }
+    }
+
+    const closeByButton = () => {
+        active(false)
     }
 
     const [nome, setNome] = useState("");
@@ -52,9 +57,14 @@ const EditPatient = ({active}) => {
     return (
         <div className={styles.mainContainer}>
             <div className={styles.shadow}></div>
-            <div className={styles.container} onClick={closeRegisterPatient}>
+            <div className={styles.container} onClick={closeByBackground}>
                 <div className={styles.contentArea}>
-                    <h1>Cadastrar paciente</h1>
+                    <div className={styles.topArea}>
+                        <button className={styles.button} onClick={closeByButton}>
+                            <Icon icon="tabler:x" />
+                        </button>
+                    </div>
+                    <h1>Editar paciente</h1>
                     {message && <p className={styles.errorMessage}>{message}</p>}
                     <form className={styles.form}>
                         <div className={styles.inputField}>
