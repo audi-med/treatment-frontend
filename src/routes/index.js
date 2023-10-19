@@ -8,8 +8,8 @@ const PagesRoutes = () => {
         <Router>
             <Routes>
                 <Route path="/signin" element={<Signin/>}/>
-                <Route path="/" element={<ViewPatients/>}/>
-                <Route path="/patient/:id" element={<ViewPatient/>}/>
+                <Route path="/patients" element={<ViewPatients/>}/>
+                <Route path="/patients/:id" element={<ViewPatient/>}/>
             </Routes>
         </Router>
     )
