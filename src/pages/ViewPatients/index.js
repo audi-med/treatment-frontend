@@ -1,6 +1,7 @@
 import { React, useState, useEffect } from "react";
 import styles from "./styles.module.css";
 import { Link } from "react-router-dom";
+import { Icon } from '@iconify/react';
 import RegisterPatient from "../../components/RegisterPatient";
 
 const ViewPatients = () => {
@@ -32,13 +33,29 @@ const ViewPatients = () => {
         return (
             <div className={styles.container}>
                 <div className={styles.gridContainer}>
+                    <div className={styles.card}>
+                        <p>#</p>
+                        <p>Nome</p>
+                        <p>Ações</p>
+                    </div>
                     <div className={styles.grid}>
-                        {patients.map((patient) => (
-                            <Link to={`/patients/${patient.id}`} key={patient.id} className={styles.cardLink}>
-                                <div className={styles.card}>
-                                    {patient.nome}         
+                        {patients.map((patient, i) => (
+                            <div className={styles.card}>
+                                <p>{i}</p>
+                                <p>
+                                <Link to={`/patients/${patient.id}`} key={patient.id} className={styles.cardLink}>
+                                    {patient.nome}
+                                </Link>
+                                </p>
+                                <div className={styles.actionsArea}>
+                                    <button className={styles.button}>
+                                        <Icon icon="prime:pencil" />
+                                    </button>
+                                    <button className={styles.button}>
+                                        <Icon icon="ic:outline-delete" />
+                                    </button>
                                 </div>
-                            </Link>
+                            </div>
                         ))}
                     </div>
                 </div>
