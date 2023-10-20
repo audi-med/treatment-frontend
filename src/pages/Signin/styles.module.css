@@ -26,11 +26,7 @@ h1 {
     margin-bottom: 1.5rem;
 }
 
-p {
-    color: #000;
-}
-
-h1, p {
+h1 {
     text-align: center;
 }
 
@@ -83,7 +79,7 @@ h1, label {
     padding-inline: 1rem;
 }
 
-.inputField, .form .link, .form p {
+.inputField, .form .link {
     margin-bottom: 1rem;
 }
 
