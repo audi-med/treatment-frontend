@@ -1,0 +1,146 @@
+.mainContainer {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+}
+
+.shadow {
+    background-color: #000;
+    height: 100%;
+    opacity: 65%;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    padding: 2.5rem;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    overflow-y: auto;
+}
+
+.contentArea {
+    background-color: #fff;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    position: relative;
+    width: 100%;
+    max-width: 28rem;
+}
+
+.topArea {
+    display: flex;
+    justify-content: right;
+}
+
+.button {
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    font-size: 1.25rem;
+    justify-content: center;
+    padding: 0.25rem;
+}
+
+.button:hover {
+    background-color: #f5f5f5;
+}
+
+.primaryTitle {
+    font-size: 1.5rem;
+}
+
+.top, .primaryTitle, .errorMessage {
+    margin-bottom: 1.5rem;
+}
+
+.errorMessage {
+    color: #f00;
+    text-align: center;
+}
+
+.primaryTitle {
+    text-align: center;
+}
+
+.link {
+    color: #164755;
+    text-decoration: none;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+.link, .primaryButton {
+    font-size: 0.875rem;
+}
+
+.inputField {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.primaryTitle, label {
+    color: #000;
+}
+
+.input {
+    background-color: transparent;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+    width: 100%;
+}
+
+.primaryButton {
+    background-color: #164755;
+    border: none;
+    font-weight: bold;
+    border-radius: 0.25rem;
+    width: 100%;
+    color: #fff;
+    cursor: pointer;
+}
+
+.input, .primaryButton {
+    padding-block: 0.75rem;
+    padding-inline: 1rem;
+}
+
+.inputField {
+    margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 480px) {
+    .shadow {
+        display: none;
+    }
+
+    .container {
+        align-items: unset;
+        background-color: #fff;
+    }
+
+    .contentArea {
+        background-color: transparent;
+        border-radius: 0;
+        box-shadow: none;
+        padding: 0;
+    }
+}
