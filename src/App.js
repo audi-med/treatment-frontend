@@ -23,7 +23,6 @@ function App() {
       </header>*/}
       <Header/>
       <PagesRoutes/>
-      <Footer/>
     </div>
   );
 }

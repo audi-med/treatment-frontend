@@ -57,11 +57,11 @@
     background-color: #f5f5f5;
 }
 
-h1 {
+.primaryTitle {
     font-size: 1.5rem;
 }
 
-.top, h1, .errorMessage {
+.top, .primaryTitle, .errorMessage {
     margin-bottom: 1.5rem;
 }
 
@@ -70,7 +70,7 @@ h1 {
     text-align: center;
 }
 
-h1 {
+.primaryTitle {
     text-align: center;
 }
 
@@ -97,7 +97,7 @@ label {
     margin-bottom: 0.5rem;
 }
 
-h1, label {
+.primaryTitle, label {
     color: #000;
 }
 
@@ -135,12 +135,12 @@ h1, label {
     .container {
         align-items: unset;
         background-color: #fff;
-        padding: 0;
     }
 
     .contentArea {
         background-color: transparent;
         border-radius: 0;
         box-shadow: none;
+        padding: 0;
     }
 }

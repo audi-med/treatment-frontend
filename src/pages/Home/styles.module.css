@@ -4,9 +4,15 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: 2.5rem;
     min-height: calc(100vh - 3.5rem);
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
     padding: 2.5rem;
+    text-align: center;
 }
 
 .contentArea {
@@ -16,11 +22,12 @@
     width: 100%;
 }
 
-.section {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    text-align: center;
+.primaryTitle {
+    font-size: 2rem;
+}
+
+.secondaryTitle {
+    font-size: 1.5rem;
 }
 
 .paragraph {
@@ -73,5 +80,5 @@
 
 .benefitIcon {
     color: #164755;
-    font-size: 0.875rem;
+    font-size: 1.25rem;
 }

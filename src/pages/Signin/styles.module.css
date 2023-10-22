@@ -18,15 +18,15 @@
     max-width: 24rem;
 }
 
-h1 {
+.primaryTitle {
     font-size: 1.5rem;
 }
 
-.top, h1 {
+.top, .primaryTitle {
     margin-bottom: 1.5rem;
 }
 
-h1 {
+.primaryTitle {
     text-align: center;
 }
 
@@ -53,7 +53,7 @@ label {
     margin-bottom: 0.5rem;
 }
 
-h1, label {
+.primaryTitle, label {
     color: #000;
 }
 
@@ -86,12 +86,13 @@ h1, label {
 @media screen and (max-width: 480px) {
     .container {
         background-color: #fff;
-        align-items: unset;
+        justify-content: unset;
     }
 
     .contentArea {
         background-color: transparent;
         border-radius: 0;
         box-shadow: none;
+        padding: 0;
     }
 }

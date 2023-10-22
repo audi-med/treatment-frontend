@@ -5,7 +5,7 @@ const Signin = () => {
     return (
         <div className={styles.container}>
             <div className={styles.contentArea}>
-                <h1>Entrar</h1>
+                <h1 className={styles.primaryTitle}>Entrar</h1>
                 <form className={styles.form}>
                     <div className={styles.inputField}>
                         <label htmlFor="email-input">E-mail</label>

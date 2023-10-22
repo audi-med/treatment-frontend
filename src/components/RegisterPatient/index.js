@@ -64,7 +64,7 @@ const RegisterPatient = ({active}) => {
                             <Icon icon="tabler:x" />
                         </button>
                     </div>
-                    <h1>Cadastrar paciente</h1>
+                    <h1 className={styles.primaryTitle}>Cadastrar paciente</h1>
                     {message && <p className={styles.errorMessage}>{message}</p>}
                     <form className={styles.form}>
                         <div className={styles.inputField}>
