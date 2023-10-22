@@ -13,15 +13,15 @@ const Home = () => {
             <section className={styles.section}>
                 <div className={styles.grid}>
                     <div className={styles.contentArea}>
-                        <h2></h2>
+                        <h3></h3>
                         <p className={styles.paragraph}></p>
                     </div>
                     <div className={styles.contentArea}>
-                        <h2></h2>
+                        <h3></h3>
                         <p className={styles.paragraph}></p>
                     </div>
                     <div className={styles.contentArea}>
-                        <h2></h2>
+                        <h3></h3>
                         <p className={styles.paragraph}></p>
                     </div>
                 </div>
