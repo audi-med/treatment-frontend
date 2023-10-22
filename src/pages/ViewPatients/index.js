@@ -75,7 +75,7 @@ const ViewPatients = () => {
         return (
             <div className={styles.container}>
                 <div className={styles.contentArea}>
-                    <p>Cadastre pacientes para visualiza-los aqui.</p>
+                    <p className={styles.paragraph}>Cadastre pacientes para visualiza-los aqui.</p>
                 </div>
                 <div className={styles.buttonArea}>
                     <button className={styles.primaryButton} onClick={showRegisterPatient}>

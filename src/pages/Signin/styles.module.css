@@ -39,7 +39,7 @@ h1 {
     text-decoration: underline;
 }
 
-.link, .primaryButton, p {
+.link, .primaryButton {
     font-size: 0.875rem;
 }
 
