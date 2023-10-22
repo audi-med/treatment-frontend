@@ -4,6 +4,16 @@
     position: fixed;
 }
 
+.shadow {
+    background-color: #000;
+    height: 100%;
+    opacity: 65%;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+}
+
 .container {
     display: flex;
     flex-direction: column;
@@ -15,16 +25,6 @@
     left: 0;
     top: 0;
     overflow-y: auto;
-}
-
-.shadow {
-    background-color: #000;
-    height: 100%;
-    opacity: 65%;
-    position: fixed;
-    width: 100%;
-    left: 0;
-    top: 0;
 }
 
 .contentArea {
@@ -128,6 +128,10 @@ h1, label {
 }
 
 @media screen and (max-width: 480px) {
+    .shadow {
+        display: none;
+    }
+
     .container {
         background-color: #fff;
         align-items: unset;
