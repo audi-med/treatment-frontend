@@ -24,7 +24,7 @@ const EditPatient = ({active, id}) => {
     const [cpfDoResponsavel, setCPFDoResponsavel] = useState("");
     const [message, setMessage] = useState("");
 
-    const registerPatient = async () => {
+    const editPatient = async () => {
         const paciente = {
             nome,
             cpf,
@@ -103,7 +103,7 @@ const EditPatient = ({active, id}) => {
                             <label htmlFor="responsible-cpf-input">CPF do responsável</label>
                             <input className={styles.input} onChange={(e) => setCPFDoResponsavel(e.target.value)} type="password" required/>
                         </div>
-                        <button className={styles.primaryButton} onClick={registerPatient} type="submit">Salvar</button>
+                        <button className={styles.primaryButton} onClick={editPatient} type="submit">Salvar</button>
                     </form>
                 </div>
             </div>
