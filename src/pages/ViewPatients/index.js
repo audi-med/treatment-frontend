@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { Icon } from '@iconify/react';
 import RegisterPatient from "../../components/RegisterPatient";
 import EditPatient from "../../components/RegisterPatient";
+import DeletePatient from "../../components/DeletePatient";
 
 const ViewPatients = () => {
     const [patients, setPatients] = useState([]);
@@ -28,9 +29,11 @@ const ViewPatients = () => {
 
     const [registerPatient, setRegisterPatient] = useState(false)
     const [editPatient, setEditPatient] = useState(false)
+    const [deletePatient, setDeletePatient] = useState(false)
 
     const showRegisterPatient = () => setRegisterPatient(!registerPatient)
     const showEditPatient = () => setEditPatient(!editPatient)
+    const showDeletePatient = () => setDeletePatient(!deletePatient)
 
     if (patients.length > 0) {
         return (
@@ -54,11 +57,12 @@ const ViewPatients = () => {
                                     <button className={styles.button} onClick={showEditPatient}>
                                         <Icon icon="prime:pencil" />
                                     </button>
-                                    <button className={styles.button}>
+                                    <button className={styles.button} onClick={showDeletePatient}>
                                         <Icon icon="ic:outline-delete" />
                                     </button>
                                 </div>
                                 {editPatient && <EditPatient active={setEditPatient} id={patient.id}/>}
+                                {deletePatient && <DeletePatient active={setDeletePatient} id={patient.id}/>}
                             </div>
                         ))}
                     </div>
