@@ -3,6 +3,7 @@ import styles from "./styles.module.css";
 import { Link } from "react-router-dom";
 import { Icon } from '@iconify/react';
 import RegisterPatient from "../../components/RegisterPatient";
+import EditPatient from "../../components/RegisterPatient";
 
 const ViewPatients = () => {
     const [patients, setPatients] = useState([]);
@@ -26,8 +27,10 @@ const ViewPatients = () => {
     }, [])
 
     const [registerPatient, setRegisterPatient] = useState(false)
+    const [editPatient, setEditPatient] = useState(false)
 
     const showRegisterPatient = () => setRegisterPatient(!registerPatient)
+    const showEditPatient = () => setEditPatient(!editPatient)
 
     if (patients.length > 0) {
         return (
@@ -48,13 +51,14 @@ const ViewPatients = () => {
                                 </Link>
                                 </p>
                                 <div className={styles.actionsArea}>
-                                    <button className={styles.button}>
+                                    <button className={styles.button} onClick={showEditPatient}>
                                         <Icon icon="prime:pencil" />
                                     </button>
                                     <button className={styles.button}>
                                         <Icon icon="ic:outline-delete" />
                                     </button>
                                 </div>
+                                {editPatient && <EditPatient active={setEditPatient} id={patient.id}/>}
                             </div>
                         ))}
                     </div>

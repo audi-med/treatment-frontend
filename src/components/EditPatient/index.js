@@ -2,7 +2,7 @@ import { React, useState } from "react";
 import styles from "./styles.module.css";
 import { Icon } from '@iconify/react';
 
-const EditPatient = ({active}) => {
+const EditPatient = ({active, id}) => {
     const closeByBackground = (e) => {
         if (e.target === e.currentTarget) {
             active(false)
@@ -38,7 +38,7 @@ const EditPatient = ({active}) => {
         }
 
         try {
-            const response = await fetch("http://localhost:8080/api/v1/pacientes/cadastro", {
+            const response = await fetch("http://localhost:8080/api/v1/pacientes/atualizar" + id, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
