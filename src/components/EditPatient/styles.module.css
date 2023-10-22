@@ -133,8 +133,9 @@ h1, label {
     }
 
     .container {
-        background-color: #fff;
         align-items: unset;
+        background-color: #fff;
+        padding: 0;
     }
 
     .contentArea {
