@@ -3,11 +3,31 @@ import styles from "./styles.module.css";
 import { Link } from "react-router-dom";
 import { Icon } from '@iconify/react';
 import RegisterPatient from "../../components/RegisterPatient";
-import EditPatient from "../../components/RegisterPatient";
+import EditPatient from "../../components/EditPatient";
 import DeletePatient from "../../components/DeletePatient";
 
 const ViewPatients = () => {
-    const [patients, setPatients] = useState([]);
+    const patients = [
+        {
+            id: '1',
+            nome: 'João',
+            cpf: '111.111.111-11',
+            birthDate: '',
+            email: '',
+            password: '',
+            address: ''
+        },
+        {
+            id: '2',
+            nome: 'Maria',
+            cpf: '222.222.222-22',
+            birthDate: '',
+            email: '',
+            password: '',
+            address: ''
+        }
+    ]
+    /*const [patients, setPatients] = useState([]);
     const [errorMessage, setErrorMessage] = useState(null);
 
     useEffect(() => {
@@ -25,7 +45,7 @@ const ViewPatients = () => {
             }
         }
         consult()
-    }, [])
+    }, [])*/
 
     const [registerPatient, setRegisterPatient] = useState(false)
     const [editPatient, setEditPatient] = useState(false)
@@ -40,18 +60,18 @@ const ViewPatients = () => {
             <div className={styles.container}>
                 <div className={styles.gridContainer}>
                     <div className={styles.card}>
-                        <p>#</p>
-                        <p>Nome</p>
-                        <p>Ações</p>
+                        <h2 className={styles.secondaryTitle}>#</h2>
+                        <h2 className={styles.secondaryTitle}>Nome</h2>
+                        <h2 className={styles.secondaryTitle}>Ações</h2>
                     </div>
                     <div className={styles.grid}>
                         {patients.map((patient, i) => (
                             <div className={styles.card}>
-                                <p>{i}</p>
-                                <p>
-                                <Link to={`/patients/${patient.id}`} key={patient.id} className={styles.cardLink}>
-                                    {patient.nome}
-                                </Link>
+                                <p className={styles.paragraph}>{i}</p>
+                                <p className={styles.paragraph}>
+                                    <Link to={`/patients/${patient.id}`} key={patient.id} className={styles.cardLink}>
+                                        {patient.nome}
+                                    </Link>
                                 </p>
                                 <div className={styles.actionsArea}>
                                     <button className={styles.button} onClick={showEditPatient}>
@@ -61,8 +81,7 @@ const ViewPatients = () => {
                                         <Icon icon="ic:outline-delete" />
                                     </button>
                                 </div>
-                                {editPatient && <EditPatient active={setEditPatient} id={patient.id}/>}
-                                {deletePatient && <DeletePatient active={setDeletePatient} id={patient.id}/>}
+                                
                             </div>
                         ))}
                     </div>
@@ -73,6 +92,8 @@ const ViewPatients = () => {
                     </button>
                 </div>
                 {registerPatient && <RegisterPatient active={setRegisterPatient}/>}
+                {editPatient && <EditPatient active={setEditPatient} id={1}/>}
+                {deletePatient && <DeletePatient active={setDeletePatient} id={1}/>}
             </div>
         )
     } else {

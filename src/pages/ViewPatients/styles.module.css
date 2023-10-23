@@ -90,6 +90,10 @@
     text-decoration: none;
 }
 
+.secondaryTitle {
+    font-size: 1rem;
+}
+
 .paragraph {
     font-size: 0.875rem;
 }
