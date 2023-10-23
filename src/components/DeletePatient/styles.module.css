@@ -1,7 +1,14 @@
-.mainContainer {
+.mainContainer, .mainContentArea {
     height: 100%;
     width: 100%;
     position: fixed;
+    left: 0;
+    top: 0;
+    
+}
+
+.mainContentArea {
+    overflow-y: auto;
 }
 
 .shadow {
@@ -18,13 +25,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100%;
+    min-height: 100%;
     padding: 2.5rem;
-    position: fixed;
+    position: relative;
     width: 100%;
     left: 0;
     top: 0;
-    overflow-y: auto;
+    justify-content: center;
 }
 
 .contentArea {
@@ -32,7 +39,6 @@
     border: none;
     border-radius: 0.5rem;
     padding: 1.5rem;
-    position: relative;
     width: 100%;
     max-width: 28rem;
 }
@@ -58,10 +64,12 @@
 }
 
 .primaryTitle {
+    color: #000;
     font-size: 1.5rem;
+    text-align: center;
 }
 
-.top, .primaryTitle, .errorMessage {
+.primaryTitle, .errorMessage {
     margin-bottom: 1.5rem;
 }
 
@@ -70,42 +78,19 @@
     text-align: center;
 }
 
-.primaryTitle {
-    text-align: center;
+.textArea {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
 }
 
-.link {
-    color: #164755;
-    text-decoration: none;
-}
-
-.link:hover {
-    text-decoration: underline;
-}
-
-.link, .primaryButton {
+.paragraph, .primaryButton {
     font-size: 0.875rem;
 }
 
-.inputField {
+.buttonsArea {
     display: flex;
-    flex-direction: column;
-}
-
-label {
-    font-size: 1rem;
-    margin-bottom: 0.5rem;
-}
-
-.primaryTitle, label {
-    color: #000;
-}
-
-.input {
-    background-color: transparent;
-    border: 1px solid #ccc;
-    border-radius: 0.25rem;
-    width: 100%;
+    gap: 1.5rem;
 }
 
 .primaryButton {
@@ -116,15 +101,8 @@ label {
     width: 100%;
     color: #fff;
     cursor: pointer;
-}
-
-.input, .primaryButton {
     padding-block: 0.75rem;
     padding-inline: 1rem;
-}
-
-.inputField {
-    margin-bottom: 1rem;
 }
 
 @media screen and (max-width: 480px) {
@@ -133,7 +111,7 @@ label {
     }
 
     .container {
-        align-items: unset;
+        justify-content: unset;
         background-color: #fff;
     }
 
