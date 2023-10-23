@@ -40,11 +40,16 @@ const ViewPatients = () => {
             <div className={styles.contentArea}>
                 <h1 className={styles.primaryTitle}>Pacientes</h1>
                 <div className={styles.optionsArea}>
-                    <div className={styles.searchBar}>
-                        <button className={styles.searchIcon}>
-                            <Icon icon="iconamoon:search-bold" />
+                    <div className={styles.searchArea}>
+                        <div className={styles.searchBar}>
+                            <button className={styles.searchIcon}>
+                                <Icon icon="iconamoon:search-bold" />
+                            </button>
+                            <input className={styles.searchInput} placeholder="Pesquisar"/>
+                        </div>
+                        <button className={styles.button}>
+                            <Icon icon="ion:filter" />
                         </button>
-                        <input className={styles.searchInput} placeholder="Pesquisar"/>
                     </div>
                     <button className={styles.primaryButton} onClick={showRegisterPatient}>
                         Cadastrar paciente
