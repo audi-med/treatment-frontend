@@ -7,27 +7,7 @@ import EditPatient from "../../components/EditPatient";
 import DeletePatient from "../../components/DeletePatient";
 
 const ViewPatients = () => {
-    const patients = [
-        {
-            id: '1',
-            nome: 'João',
-            cpf: '111.111.111-11',
-            birthDate: '',
-            email: '',
-            password: '',
-            address: ''
-        },
-        {
-            id: '2',
-            nome: 'Maria',
-            cpf: '222.222.222-22',
-            birthDate: '',
-            email: '',
-            password: '',
-            address: ''
-        }
-    ]
-    /*const [patients, setPatients] = useState([]);
+    const [patients, setPatients] = useState([]);
     const [errorMessage, setErrorMessage] = useState(null);
 
     useEffect(() => {
@@ -45,7 +25,7 @@ const ViewPatients = () => {
             }
         }
         consult()
-    }, [])*/
+    }, [])
 
     const [registerPatient, setRegisterPatient] = useState(false)
     const [editPatient, setEditPatient] = useState(false)
@@ -55,11 +35,22 @@ const ViewPatients = () => {
     const showEditPatient = () => setEditPatient(!editPatient)
     const showDeletePatient = () => setDeletePatient(!deletePatient)
 
-    if (patients.length > 0) {
-        return (
-            <div className={styles.container}>
-                <div className={styles.contentArea}>
-                    <h1>Pacientes</h1>
+    return (
+        <div className={styles.container}>
+            <div className={styles.contentArea}>
+                <h1 className={styles.primaryTitle}>Pacientes</h1>
+                <div className={styles.optionsArea}>
+                    <div className={styles.searchBar}>
+                        <button className={styles.searchIcon}>
+                            <Icon icon="iconamoon:search-bold" />
+                        </button>
+                        <input className={styles.searchInput} placeholder="Pesquisar"/>
+                    </div>
+                    <button className={styles.primaryButton} onClick={showRegisterPatient}>
+                        Cadastrar paciente
+                    </button>
+                </div>
+                {patients.length > 0 ? (
                     <div className={styles.grid}>
                         <div className={styles.gridHeader}>
                             <h2 className={styles.secondaryTitle}>#</h2>
@@ -88,32 +79,18 @@ const ViewPatients = () => {
                             ))}
                         </div>
                     </div>
-                </div>
-                <div className={styles.buttonArea}>
-                    <button className={styles.primaryButton} onClick={showRegisterPatient}>
-                        Cadastrar paciente
-                    </button>
-                </div>
-                {registerPatient && <RegisterPatient active={setRegisterPatient}/>}
-                {editPatient && <EditPatient active={setEditPatient} id={1}/>}
-                {deletePatient && <DeletePatient active={setDeletePatient} id={1}/>}
+                ) : (
+                    <div className={styles.messageArea}>
+                        <p className={styles.paragraph}>Cadastre pacientes para visualiza-los aqui.</p>
+                    </div>
+                )}
+                
             </div>
-        )
-    } else {
-        return (
-            <div className={styles.container}>
-                <div className={styles.contentArea}>
-                    <p className={styles.paragraph}>Cadastre pacientes para visualiza-los aqui.</p>
-                </div>
-                <div className={styles.buttonArea}>
-                    <button className={styles.primaryButton} onClick={showRegisterPatient}>
-                        Cadastrar paciente
-                    </button>
-                </div>
-                {registerPatient && <RegisterPatient active={setRegisterPatient}/>}
-            </div>
-        )
-    }
+            {registerPatient && <RegisterPatient active={setRegisterPatient}/>}
+            {editPatient && <EditPatient active={setEditPatient} id={1}/>}
+            {deletePatient && <DeletePatient active={setDeletePatient} id={1}/>}
+        </div>
+    )
 }
 
 export default ViewPatients
