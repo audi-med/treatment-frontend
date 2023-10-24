@@ -98,11 +98,11 @@ const RegisterPatient = ({active}) => {
                             </div>
                             <div className={styles.inputField}>
                                 <label htmlFor="responsible-name-input">Nome do responsável</label>
-                                <input className={styles.input} onChange={(e) => setNomeDoResponsavel(e.target.value)} type="password" required/>
+                                <input className={styles.input} onChange={(e) => setNomeDoResponsavel(e.target.value)} type="text" required/>
                             </div>
                             <div className={styles.inputField}>
                                 <label htmlFor="responsible-cpf-input">CPF do responsável</label>
-                                <input className={styles.input} onChange={(e) => setCPFDoResponsavel(e.target.value)} type="password" required/>
+                                <input className={styles.input} onChange={(e) => setCPFDoResponsavel(e.target.value)} type="text" required/>
                             </div>
                             <button className={styles.primaryButton} onClick={registerPatient} type="submit">Cadastrar</button>
                         </form>
