@@ -101,7 +101,6 @@ const ViewPatients = () => {
                         <p className={styles.paragraph}>Cadastre pacientes para visualiza-los aqui.</p>
                     </div>
                 )}
-                
             </div>
             {registerPatient && <RegisterPatient active={setRegisterPatient}/>}
             {editPatient && <EditPatient active={setEditPatient} id={1}/>}
