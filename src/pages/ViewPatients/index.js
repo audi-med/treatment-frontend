@@ -10,11 +10,11 @@ const ViewPatients = () => {
     /*const patients = [
         {
             id: '1',
-            name: 'João',
+            nome: 'João',
         },
         {
             id: '2',
-            name: 'Maria',
+            nome: 'Maria',
         }
     ]*/
 
