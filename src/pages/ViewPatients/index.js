@@ -7,7 +7,7 @@ import EditPatient from "../../components/EditPatient";
 import DeletePatient from "../../components/DeletePatient";
 
 const ViewPatients = () => {
-    /*const patients = [
+    const patients = [
         {
             id: '1',
             nome: 'João',
@@ -16,9 +16,9 @@ const ViewPatients = () => {
             id: '2',
             nome: 'Maria',
         }
-    ]*/
+    ]
 
-    const [patients, setPatients] = useState([]);
+    /*const [patients, setPatients] = useState([]);
     const [errorMessage, setErrorMessage] = useState(null);
 
     useEffect(() => {
@@ -36,7 +36,7 @@ const ViewPatients = () => {
             }
         }
         consult()
-    }, [])
+    }, [])*/
 
     const [registerPatient, setRegisterPatient] = useState(false)
     const [editPatient, setEditPatient] = useState(false)
@@ -67,34 +67,34 @@ const ViewPatients = () => {
                     </button>
                 </div>
                 {patients.length > 0 ? (
-                    <table className={styles.grid}>
-                        <tr className={styles.gridHeader}>
-                            <th><h2 className={styles.secondaryTitle}>#</h2></th>
-                            <th><h2 className={styles.secondaryTitle}>Nome</h2></th>
-                            <th><h2 className={styles.secondaryTitle}>Ações</h2></th>
+                    <table className={styles.table}>
+                        <tr className={styles.tableRow}>
+                            <th className={styles.tableItem}><h2 className={styles.secondaryTitle}>#</h2></th>
+                            <th className={styles.tableItem}><h2 className={styles.secondaryTitle}>Nome</h2></th>
+                            <th className={styles.tableItem}><h2 className={styles.secondaryTitle}>Ações</h2></th>
                         </tr>
-                        <div className={styles.gridItems}>
-                            {patients.map((patient, i) => (
-                                <tr className={styles.gridItem}>
-                                    <td><p className={styles.paragraph}>{i}</p></td>
-                                    <td>
-                                        <p className={styles.paragraph}>
-                                            <Link to={`/patients/${patient.id}`} key={patient.id} className={styles.cardLink}>
-                                                {patient.nome}
-                                            </Link>
-                                        </p>
-                                    </td>
-                                    <td>
+                        {patients.map((patient, i) => (
+                            <tr className={styles.tableRow}>
+                                <td className={styles.tableItem}><p className={styles.paragraph}>{i}</p></td>
+                                <td className={styles.tableItem}>
+                                    <p className={styles.paragraph}>
+                                        <Link to={`/patients/${patient.id}`} key={patient.id} className={styles.cardLink}>
+                                            {patient.nome}
+                                        </Link>
+                                    </p>
+                                </td>
+                                <td className={styles.tableItem}>
+                                    <div className={styles.actionsArea}>
                                         <button className={styles.button} onClick={showEditPatient}>
                                             <Icon icon="prime:pencil" />
                                         </button>
                                         <button className={styles.button} onClick={showDeletePatient}>
                                             <Icon icon="ic:outline-delete" />
                                         </button>
-                                    </td>
-                                </tr>
-                            ))}
-                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        ))}
                     </table>
                 ) : (
                     <div className={styles.messageArea}>
