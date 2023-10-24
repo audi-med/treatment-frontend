@@ -7,6 +7,17 @@ import EditPatient from "../../components/EditPatient";
 import DeletePatient from "../../components/DeletePatient";
 
 const ViewPatients = () => {
+    /*const patients = [
+        {
+            id: '1',
+            name: 'João',
+        },
+        {
+            id: '2',
+            name: 'Maria',
+        }
+    ]*/
+
     const [patients, setPatients] = useState([]);
     const [errorMessage, setErrorMessage] = useState(null);
 
