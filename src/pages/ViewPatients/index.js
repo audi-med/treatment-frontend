@@ -7,7 +7,7 @@ import EditPatient from "../../components/EditPatient";
 import DeletePatient from "../../components/DeletePatient";
 
 const ViewPatients = () => {
-    const patients = [
+    /*const patients = [
         {
             id: '1',
             nome: 'João',
@@ -16,9 +16,9 @@ const ViewPatients = () => {
             id: '2',
             nome: 'Maria',
         }
-    ]
+    ]*/
 
-    /*const [patients, setPatients] = useState([]);
+    const [patients, setPatients] = useState([]);
     const [errorMessage, setErrorMessage] = useState(null);
 
     useEffect(() => {
@@ -36,7 +36,7 @@ const ViewPatients = () => {
             }
         }
         consult()
-    }, [])*/
+    }, [])
 
     const [registerPatient, setRegisterPatient] = useState(false)
     const [editPatient, setEditPatient] = useState(false)
