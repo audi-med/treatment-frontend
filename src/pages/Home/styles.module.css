@@ -13,6 +13,7 @@
     gap: 1.5rem;
     padding: 2.5rem;
     text-align: center;
+    width: 100%;
 }
 
 .contentArea {
@@ -48,8 +49,10 @@
 }
 
 .grid {
-    display: flex;
-    gap: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(auto, 16rem));
+    grid-gap: 1.5rem;
+    justify-content: center;
 }
 
 .card {

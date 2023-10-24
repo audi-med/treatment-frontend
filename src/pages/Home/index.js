@@ -6,9 +6,11 @@ const Home = () => {
     return (
         <div className={styles.container}>
             <section className={styles.section}>
-                <h1 className={styles.primaryTitle}></h1>
-                <p className={styles.paragraph}></p>
-                <button className={styles.primaryButton}>Entrar</button>
+                <div>
+                    <h1 className={styles.primaryTitle}></h1>
+                    <p className={styles.paragraph}></p>
+                    <button className={styles.primaryButton}>Entrar</button>
+                </div>
             </section>
             <section className={styles.section}>
                 <div className={styles.grid}>
