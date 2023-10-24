@@ -67,34 +67,35 @@ const ViewPatients = () => {
                     </button>
                 </div>
                 {patients.length > 0 ? (
-                    <div className={styles.grid}>
-                        <div className={styles.gridHeader}>
-                            <h2 className={styles.secondaryTitle}>#</h2>
-                            <h2 className={styles.secondaryTitle}>Nome</h2>
-                            <h2 className={styles.secondaryTitle}>Ações</h2>
-                        </div>
+                    <table className={styles.grid}>
+                        <tr className={styles.gridHeader}>
+                            <th><h2 className={styles.secondaryTitle}>#</h2></th>
+                            <th><h2 className={styles.secondaryTitle}>Nome</h2></th>
+                            <th><h2 className={styles.secondaryTitle}>Ações</h2></th>
+                        </tr>
                         <div className={styles.gridItems}>
                             {patients.map((patient, i) => (
-                                <div className={styles.gridItem}>
-                                    <p className={styles.paragraph}>{i}</p>
-                                    <p className={styles.paragraph}>
-                                        <Link to={`/patients/${patient.id}`} key={patient.id} className={styles.cardLink}>
-                                            {patient.nome}
-                                        </Link>
-                                    </p>
-                                    <div className={styles.actionsArea}>
+                                <tr className={styles.gridItem}>
+                                    <td><p className={styles.paragraph}>{i}</p></td>
+                                    <td>
+                                        <p className={styles.paragraph}>
+                                            <Link to={`/patients/${patient.id}`} key={patient.id} className={styles.cardLink}>
+                                                {patient.nome}
+                                            </Link>
+                                        </p>
+                                    </td>
+                                    <td>
                                         <button className={styles.button} onClick={showEditPatient}>
                                             <Icon icon="prime:pencil" />
                                         </button>
                                         <button className={styles.button} onClick={showDeletePatient}>
                                             <Icon icon="ic:outline-delete" />
                                         </button>
-                                    </div>
-                                    
-                                </div>
+                                    </td>
+                                </tr>
                             ))}
                         </div>
-                    </div>
+                    </table>
                 ) : (
                     <div className={styles.messageArea}>
                         <p className={styles.paragraph}>Cadastre pacientes para visualiza-los aqui.</p>
