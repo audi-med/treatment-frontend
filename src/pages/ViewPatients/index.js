@@ -41,6 +41,7 @@ const ViewPatients = () => {
     const [registerPatient, setRegisterPatient] = useState(false)
     const [editPatient, setEditPatient] = useState(false)
     const [deletePatient, setDeletePatient] = useState(false)
+    const [id, setId] = useState("")
 
     const showRegisterPatient = () => setRegisterPatient(!registerPatient)
     const showEditPatient = () => setEditPatient(!editPatient)
@@ -85,10 +86,10 @@ const ViewPatients = () => {
                                 </td>
                                 <td className={styles.tableItem}>
                                     <div className={styles.actionsArea}>
-                                        <button className={styles.button} onClick={showEditPatient}>
+                                        <button className={styles.button} onClick={(showEditPatient, setId(patient.id))}>
                                             <Icon icon="prime:pencil" />
                                         </button>
-                                        <button className={styles.button} onClick={showDeletePatient}>
+                                        <button className={styles.button} onClick={(showDeletePatient, setId(patient.id))}>
                                             <Icon icon="ic:outline-delete" />
                                         </button>
                                     </div>
@@ -103,8 +104,8 @@ const ViewPatients = () => {
                 )}
             </div>
             {registerPatient && <RegisterPatient active={setRegisterPatient}/>}
-            {editPatient && <EditPatient active={setEditPatient} id={1}/>}
-            {deletePatient && <DeletePatient active={setDeletePatient} id={1}/>}
+            {editPatient && <EditPatient active={setEditPatient} id={id}/>}
+            {deletePatient && <DeletePatient active={setDeletePatient} id={id}/>}
         </div>
     )
 }

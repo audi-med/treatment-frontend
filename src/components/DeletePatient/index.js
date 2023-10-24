@@ -18,17 +18,14 @@ const DeletePatient = ({active, id}) => {
     const deletePatient = async () => {
         try {
             const response = await fetch("http://localhost:8080/api/v1/pacientes/excluir" + id, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                }
+                method: "DELETE"
             })
             if (!response.ok) {
-                throw new Error("Erro ao cadastrar o paciente.")
+                throw new Error("Erro ao excluir o paciente.")
             }
-            setMessage("Paciente cadastrado com sucesso!")
+            setMessage("Paciente excluido com sucesso!")
         } catch (error) {
-            setMessage("Erro ao cadastrar o paciente. Verifique os dados informados.")
+            setMessage("Erro ao excluir o paciente. Verifique os dados informados.")
         }
     }
 
