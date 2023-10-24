@@ -69,32 +69,36 @@ const ViewPatients = () => {
                 </div>
                 {patients.length > 0 ? (
                     <table className={styles.table}>
-                        <tr className={styles.tableRow}>
-                            <th className={styles.tableItem}><h2 className={styles.secondaryTitle}>#</h2></th>
-                            <th className={styles.tableItem}><h2 className={styles.secondaryTitle}>Nome</h2></th>
-                            <th className={styles.tableItem}><h2 className={styles.secondaryTitle}>Ações</h2></th>
-                        </tr>
-                        {patients.map((patient, i) => (
+                        <thead>
                             <tr className={styles.tableRow}>
-                                <td className={styles.tableItem}><p className={styles.paragraph}>{i}</p></td>
-                                <td className={styles.tableItem}>
-                                    <p className={styles.paragraph}>
-                                        <Link to={`/patients/${patient.id}`} key={patient.id} className={styles.cardLink}>
-                                            {patient.nome}
-                                        </Link>
-                                    </p>
-                                </td>
-                                <td className={styles.tableItem}>
-                                    <div className={styles.actionsArea}>
-                                        <button className={styles.button} onClick={(showEditPatient, setId(patient.id))}>
-                                            <Icon icon="prime:pencil" />
-                                        </button>
-                                        <button className={styles.button} onClick={(showDeletePatient, setId(patient.id))}>
-                                            <Icon icon="ic:outline-delete" />
-                                        </button>
-                                    </div>
-                                </td>
+                                <th className={styles.tableItem}><h2 className={styles.secondaryTitle}>#</h2></th>
+                                <th className={styles.tableItem}><h2 className={styles.secondaryTitle}>Nome</h2></th>
+                                <th className={styles.tableItem}><h2 className={styles.secondaryTitle}>Ações</h2></th>
                             </tr>
+                        </thead>
+                        {patients.map((patient, i) => (
+                            <tbody>
+                                <tr className={styles.tableRow}>
+                                    <td className={styles.tableItem}><p className={styles.paragraph}>{i}</p></td>
+                                    <td className={styles.tableItem}>
+                                        <p className={styles.paragraph}>
+                                            <Link to={`/patients/${patient.id}`} key={patient.id} className={styles.cardLink}>
+                                                {patient.nome}
+                                            </Link>
+                                        </p>
+                                    </td>
+                                    <td className={styles.tableItem}>
+                                        <div className={styles.actionsArea}>
+                                            <button className={styles.button} onClick={(showEditPatient, setId(patient.id))}>
+                                                <Icon icon="prime:pencil" />
+                                            </button>
+                                            <button className={styles.button} onClick={(showDeletePatient, setId(patient.id))}>
+                                                <Icon icon="ic:outline-delete" />
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
                         ))}
                     </table>
                 ) : (
