@@ -46,11 +46,11 @@ const EditPatient = ({active, id}) => {
                 body: JSON.stringify(paciente)
             })
             if (!response.ok) {
-                throw new Error("Erro ao cadastrar o paciente.")
+                throw new Error("Erro ao editar o paciente.")
             }
-            setMessage("Paciente cadastrado com sucesso!")
+            setMessage("Paciente editado com sucesso!")
         } catch (error) {
-            setMessage("Erro ao cadastrar o paciente. Verifique os dados informados.")
+            setMessage("Erro ao editar o paciente. Verifique os dados informados.")
         }
     }
 
