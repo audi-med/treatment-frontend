@@ -48,12 +48,10 @@ const RegisterPatient = ({onClose}) => {
             if (!response.ok) {
                 throw new Error("Erro ao cadastrar o paciente.")
             }
-            setMessage("Paciente cadastrado com sucesso!")
+            onClose();
         } catch (error) {
             setMessage("Erro ao cadastrar o paciente. Verifique os dados informados.")
         }
-
-        onClose();
     };
 
 
