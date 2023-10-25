@@ -77,7 +77,7 @@ const ViewPatients = () => {
                             {patients.map((patient, i) => (
                                 <tr className={styles.tableRow} key={patient.id}>
                                     <td className={styles.tableItem}>
-                                        <p className={styles.paragraph}>{i}</p>
+                                        <p className={styles.paragraph}>{i + 1}</p>
                                     </td>
                                     <td className={styles.tableItem}>
                                         <p className={styles.paragraph}>
