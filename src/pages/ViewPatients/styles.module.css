@@ -101,7 +101,7 @@
     width: 100%;
 }
 
-.tableRow:not(:first-child) {
+.tableBody .tableRow {
     border-top: 1px solid #ccc;
 }
 
