@@ -75,12 +75,10 @@ const EditPatient = ({ id, onClose }) => {
             if (!response.ok) {
                 throw new Error("Erro ao editar o paciente.")
             }
-            setMessage("Paciente editado com sucesso!")
+            onClose();
         } catch (error) {
             setMessage("Erro ao editar o paciente. Verifique os dados informados.")
         }
-
-        onClose();
     };
 
     return (
