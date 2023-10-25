@@ -88,10 +88,10 @@ const ViewPatients = () => {
                                     </td>
                                     <td className={styles.tableItem}>
                                         <button className={styles.button} onClick={() => openPatientModal(patient.id, 'edit')}>
-                                            Editar
+                                            <Icon icon="prime:pencil" />
                                         </button>
                                         <button className={styles.button} onClick={() => openPatientModal(patient.id, 'delete')}>
-                                            Excluir
+                                            <Icon icon="ic:outline-delete" />
                                         </button>
                                     </td>
                                 </tr>
