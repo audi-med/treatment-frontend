@@ -17,7 +17,7 @@ const DeletePatient = ({ id, onClose }) => {
 
     const handleDelete = async () => {
         try {
-            const response = await fetch("http://localhost:8080/api/v1/pacientes/excluir" + id, {
+            const response = await fetch("http://localhost:8080/api/v1/pacientes/excluir/" + id, {
                 method: "DELETE"
             })
             if (!response.ok) {
