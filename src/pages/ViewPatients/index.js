@@ -87,12 +87,14 @@ const ViewPatients = () => {
                                         </p>
                                     </td>
                                     <td className={styles.tableItem}>
-                                        <button className={styles.button} onClick={() => openPatientModal(patient.id, 'edit')}>
-                                            <Icon icon="prime:pencil" />
-                                        </button>
-                                        <button className={styles.button} onClick={() => openPatientModal(patient.id, 'delete')}>
-                                            <Icon icon="ic:outline-delete" />
-                                        </button>
+                                        <div className={styles.actionsArea}>
+                                            <button className={styles.button} onClick={() => openPatientModal(patient.id, 'edit')}>
+                                                <Icon icon="prime:pencil" />
+                                            </button>
+                                            <button className={styles.button} onClick={() => openPatientModal(patient.id, 'delete')}>
+                                                <Icon icon="ic:outline-delete" />
+                                            </button>
+                                        </div>
                                     </td>
                                 </tr>
                             ))}
