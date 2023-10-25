@@ -7,19 +7,10 @@ import EditPatient from "../../components/EditPatient";
 import DeletePatient from "../../components/DeletePatient";
 
 const ViewPatients = () => {
-    /*const patients = [
-        {
-            id: '1',
-            nome: 'João',
-        },
-        {
-            id: '2',
-            nome: 'Maria',
-        }
-    ]*/
-
     const [patients, setPatients] = useState([]);
     const [errorMessage, setErrorMessage] = useState(null);
+    const [selectedPatient, setSelectedPatient] = useState(null);
+    const [selectedAction, setSelectedAction] = useState(null);
 
     useEffect(() => {
         const consult = async () => {
@@ -38,14 +29,20 @@ const ViewPatients = () => {
         consult()
     }, [])
 
-    const [registerPatient, setRegisterPatient] = useState(false)
-    const [editPatient, setEditPatient] = useState(false)
-    const [deletePatient, setDeletePatient] = useState(false)
-    const [id, setId] = useState("")
+    const showRegisterPatient = () => {
+        setSelectedPatient(null);
+        setSelectedAction('register');
+    };
 
-    const showRegisterPatient = () => setRegisterPatient(!registerPatient)
-    const showEditPatient = () => setEditPatient(!editPatient)
-    const showDeletePatient = () => setDeletePatient(!deletePatient)
+    const openPatientModal = (id, action) => {
+        setSelectedPatient(id);
+        setSelectedAction(action);
+    };
+
+    const closePatientModal = () => {
+        setSelectedPatient(null);
+        setSelectedAction(null);
+    };
 
     return (
         <div className={styles.container}>
@@ -57,7 +54,7 @@ const ViewPatients = () => {
                             <button className={styles.searchIcon}>
                                 <Icon icon="iconamoon:search-bold" />
                             </button>
-                            <input className={styles.searchInput} placeholder="Pesquisar"/>
+                            <input className={styles.searchInput} placeholder="Pesquisar" />
                         </div>
                         <button className={styles.button}>
                             <Icon icon="ion:filter" />
@@ -78,24 +75,24 @@ const ViewPatients = () => {
                         </thead>
                         <tbody className={styles.tableBody}>
                             {patients.map((patient, i) => (
-                                <tr className={styles.tableRow}>
-                                    <td className={styles.tableItem}><p className={styles.paragraph}>{i}</p></td>
+                                <tr className={styles.tableRow} key={patient.id}>
+                                    <td className={styles.tableItem}>
+                                        <p className={styles.paragraph}>{i}</p>
+                                    </td>
                                     <td className={styles.tableItem}>
                                         <p className={styles.paragraph}>
-                                            <Link to={`/patients/${patient.id}`} key={patient.id} className={styles.cardLink}>
+                                            <Link to={`/patients/${patient.id}`} className={styles.cardLink}>
                                                 {patient.nome}
                                             </Link>
                                         </p>
                                     </td>
                                     <td className={styles.tableItem}>
-                                        <div className={styles.actionsArea}>
-                                            <button className={styles.button} onClick={(showEditPatient, setId(patient.id))}>
-                                                <Icon icon="prime:pencil" />
-                                            </button>
-                                            <button className={styles.button} onClick={(showDeletePatient, setId(patient.id))}>
-                                                <Icon icon="ic:outline-delete" />
-                                            </button>
-                                        </div>
+                                        <button className={styles.button} onClick={() => openPatientModal(patient.id, 'edit')}>
+                                            Editar
+                                        </button>
+                                        <button className={styles.button} onClick={() => openPatientModal(patient.id, 'delete')}>
+                                            Excluir
+                                        </button>
                                     </td>
                                 </tr>
                             ))}
@@ -106,12 +103,22 @@ const ViewPatients = () => {
                         <p className={styles.paragraph}>Cadastre pacientes para visualiza-los aqui.</p>
                     </div>
                 )}
+                {selectedAction === 'register' && (
+                    <RegisterPatient onClose={closePatientModal} />
+                )}
+                {selectedPatient !== null && (
+                    <div>
+                        {selectedAction === 'edit' && (
+                            <EditPatient id={selectedPatient} onClose={closePatientModal} />
+                        )}
+                        {selectedAction === 'delete' && (
+                            <DeletePatient id={selectedPatient} onClose={closePatientModal} />
+                        )}
+                    </div>
+                )}
             </div>
-            {registerPatient && <RegisterPatient active={setRegisterPatient}/>}
-            {editPatient && <EditPatient active={setEditPatient} id={id}/>}
-            {deletePatient && <DeletePatient active={setDeletePatient} id={id}/>}
         </div>
-    )
-}
+    );
+};
 
-export default ViewPatients
+export default ViewPatients;
