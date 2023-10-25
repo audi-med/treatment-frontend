@@ -27,7 +27,7 @@ const ViewPatients = () => {
             }
         }
         consult()
-    }, [])
+    })
 
     const showRegisterPatient = () => {
         setSelectedPatient(null);
