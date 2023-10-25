@@ -39,7 +39,7 @@ const EditPatient = ({ id, onClose }) => {
 
         try {
             const response = await fetch("http://localhost:8080/api/v1/pacientes/atualizar/" + id, {
-                method: "POST",
+                method: "PUT",
                 headers: {
                     "Content-Type": "application/json"
                 },
