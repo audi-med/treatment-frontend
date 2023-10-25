@@ -23,12 +23,10 @@ const DeletePatient = ({ id, onClose }) => {
             if (!response.ok) {
                 throw new Error("Erro ao excluir o paciente.")
             }
-            setMessage("Paciente excluido com sucesso!")
+            onClose();
         } catch (error) {
             setMessage("Erro ao excluir o paciente. Verifique os dados informados.")
         }
-    
-        onClose();
     };
 
     return (
