@@ -69,7 +69,7 @@ const ViewPatients = () => {
                 </div>
                 {patients.length > 0 ? (
                     <table className={styles.table}>
-                        <thead>
+                        <thead className={styles.tableHeader}>
                             <tr className={styles.tableRow}>
                                 <th className={styles.tableItem}><h2 className={styles.secondaryTitle}>#</h2></th>
                                 <th className={styles.tableItem}><h2 className={styles.secondaryTitle}>Nome</h2></th>
@@ -77,7 +77,7 @@ const ViewPatients = () => {
                             </tr>
                         </thead>
                         {patients.map((patient, i) => (
-                            <tbody>
+                            <tbody className={styles.tableBody}>
                                 <tr className={styles.tableRow}>
                                     <td className={styles.tableItem}><p className={styles.paragraph}>{i}</p></td>
                                     <td className={styles.tableItem}>
