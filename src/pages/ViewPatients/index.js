@@ -76,8 +76,8 @@ const ViewPatients = () => {
                                 <th className={styles.tableItem}><h2 className={styles.secondaryTitle}>Ações</h2></th>
                             </tr>
                         </thead>
-                        {patients.map((patient, i) => (
-                            <tbody className={styles.tableBody}>
+                        <tbody className={styles.tableBody}>
+                            {patients.map((patient, i) => (
                                 <tr className={styles.tableRow}>
                                     <td className={styles.tableItem}><p className={styles.paragraph}>{i}</p></td>
                                     <td className={styles.tableItem}>
@@ -98,8 +98,8 @@ const ViewPatients = () => {
                                         </div>
                                     </td>
                                 </tr>
-                            </tbody>
-                        ))}
+                            ))}
+                        </tbody>
                     </table>
                 ) : (
                     <div className={styles.messageArea}>
