@@ -2,15 +2,15 @@ import { React, useState } from "react";
 import styles from "./styles.module.css";
 import { Icon } from '@iconify/react';
 
-const RegisterPatient = ({active}) => {
+const RegisterPatient = ({onClose}) => {
     const closeByBackground = (e) => {
         if (e.target === e.currentTarget) {
-            active(false)
+            onClose();
         }
     }
 
     const closeByButton = () => {
-        active(false)
+        onClose();
     }
 
     const [nome, setNome] = useState("");
@@ -24,7 +24,7 @@ const RegisterPatient = ({active}) => {
     const [cpfDoResponsavel, setCPFDoResponsavel] = useState("");
     const [message, setMessage] = useState("");
 
-    const registerPatient = async () => {
+    const handleRegister = async () => {
         const paciente = {
             nome,
             cpf,
@@ -52,7 +52,10 @@ const RegisterPatient = ({active}) => {
         } catch (error) {
             setMessage("Erro ao cadastrar o paciente. Verifique os dados informados.")
         }
-    }
+
+        onClose();
+    };
+
 
     return (
         <div className={styles.mainContainer}>
@@ -104,7 +107,7 @@ const RegisterPatient = ({active}) => {
                                 <label htmlFor="responsible-cpf-input">CPF do responsável</label>
                                 <input className={styles.input} onChange={(e) => setCPFDoResponsavel(e.target.value)} type="text" required/>
                             </div>
-                            <button className={styles.primaryButton} onClick={registerPatient} type="submit">Cadastrar</button>
+                            <button className={styles.primaryButton} onClick={handleRegister} type="submit">Cadastrar</button>
                         </form>
                     </div>
                 </div>

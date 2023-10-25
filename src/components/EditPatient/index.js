@@ -2,15 +2,15 @@ import { React, useState } from "react";
 import styles from "./styles.module.css";
 import { Icon } from '@iconify/react';
 
-const EditPatient = ({active, id}) => {
+const EditPatient = ({ id, onClose }) => {
     const closeByBackground = (e) => {
         if (e.target === e.currentTarget) {
-            active(false)
+            onClose();
         }
     }
 
     const closeByButton = () => {
-        active(false)
+        onClose();
     }
 
     const [nome, setNome] = useState("");
@@ -24,7 +24,7 @@ const EditPatient = ({active, id}) => {
     const [cpfDoResponsavel, setCPFDoResponsavel] = useState("");
     const [message, setMessage] = useState("");
 
-    const editPatient = async () => {
+    const handleEdit = async () => {
         const paciente = {
             nome,
             cpf,
@@ -52,7 +52,9 @@ const EditPatient = ({active, id}) => {
         } catch (error) {
             setMessage("Erro ao editar o paciente. Verifique os dados informados.")
         }
-    }
+    
+        onClose();
+    };
 
     return (
         <div className={styles.mainContainer}>
@@ -104,7 +106,7 @@ const EditPatient = ({active, id}) => {
                                 <label htmlFor="responsible-cpf-input">CPF do responsável</label>
                                 <input className={styles.input} onChange={(e) => setCPFDoResponsavel(e.target.value)} type="text" required/>
                             </div>
-                            <button className={styles.primaryButton} onClick={editPatient} type="submit">Salvar</button>
+                            <button className={styles.primaryButton} onClick={handleEdit} type="submit">Salvar</button>
                         </form>
                     </div>
                 </div>

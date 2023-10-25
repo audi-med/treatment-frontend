@@ -2,20 +2,20 @@ import { React, useState } from "react";
 import styles from "./styles.module.css";
 import { Icon } from '@iconify/react';
 
-const DeletePatient = ({active, id}) => {
+const DeletePatient = ({ id, onClose }) => {
     const closeByBackground = (e) => {
         if (e.target === e.currentTarget) {
-            active(false)
+            onClose();
         }
     }
 
     const closeByButton = () => {
-        active(false)
+        onClose();
     }
 
     const [message, setMessage] = useState("");
 
-    const deletePatient = async () => {
+    const handleDelete = async () => {
         try {
             const response = await fetch("http://localhost:8080/api/v1/pacientes/excluir" + id, {
                 method: "DELETE"
@@ -27,7 +27,9 @@ const DeletePatient = ({active, id}) => {
         } catch (error) {
             setMessage("Erro ao excluir o paciente. Verifique os dados informados.")
         }
-    }
+    
+        onClose();
+    };
 
     return (
         <div className={styles.mainContainer}>
@@ -45,7 +47,7 @@ const DeletePatient = ({active, id}) => {
                         <div className={styles.textArea}>
                             <p className={styles.paragraph}>Tem certeza de que deseja excluir o paciente?</p>
                             <div className={styles.buttonsArea}>
-                                <button className={styles.primaryButton} onClick={deletePatient}>Excluir</button>
+                                <button className={styles.primaryButton} onClick={handleDelete}>Excluir</button>
                                 <button className={styles.primaryButton} onClick={closeByButton}>Cancelar</button>
                             </div>
                         </div>
