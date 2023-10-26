@@ -1,10 +1,9 @@
 .mainContainer, .mainContentArea {
     height: 100%;
-    width: 100%;
-    position: fixed;
     left: 0;
+    position: fixed;
     top: 0;
-    
+    width: 100%;
 }
 
 .mainContentArea {
@@ -14,33 +13,33 @@
 .shadow {
     background-color: #000;
     height: 100%;
+    left: 0;
     opacity: 65%;
     position: fixed;
-    width: 100%;
-    left: 0;
     top: 0;
+    width: 100%;
 }
 
 .container {
+    align-items: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    justify-content: center;
+    left: 0;
     min-height: 100%;
     padding: 2.5rem;
     position: relative;
-    width: 100%;
-    left: 0;
     top: 0;
-    justify-content: center;
+    width: 100%;
 }
 
 .contentArea {
     background-color: #fff;
     border: none;
     border-radius: 0.5rem;
+    max-width: 28rem;
     padding: 1.5rem;
     width: 100%;
-    max-width: 28rem;
 }
 
 .topArea {
@@ -120,9 +119,9 @@ label {
     border: none;
     font-weight: bold;
     border-radius: 0.25rem;
-    width: 100%;
     color: #fff;
     cursor: pointer;
+    width: 100%;
 }
 
 .input, .primaryButton {
@@ -140,8 +139,8 @@ label {
     }
 
     .container {
-        justify-content: unset;
         background-color: #fff;
+        justify-content: unset;
     }
 
     .contentArea {
