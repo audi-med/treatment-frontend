@@ -56,11 +56,13 @@ const ViewPatients = () => {
                             </button>
                             <input className={styles.searchInput} placeholder="Pesquisar" />
                         </div>
-                        <button className={styles.button}>
-                            <Icon icon="ion:filter" />
+                        <button className={styles.primaryButton}>
+                            <Icon className={styles.icon} icon="ion:filter" />
+                            Filtrar
                         </button>
                     </div>
                     <button className={styles.primaryButton} onClick={showRegisterPatient}>
+                        <Icon className={styles.icon} icon="akar-icons:plus" />
                         Cadastrar paciente
                     </button>
                 </div>
