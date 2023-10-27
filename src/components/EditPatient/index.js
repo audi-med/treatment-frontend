@@ -29,7 +29,7 @@ const EditPatient = ({ id, onClose }) => {
                 }
             }
             consult()
-        }, [id])
+        })
 
         const [nome, setNome] = useState("");
         const [cpf, setCPF] = useState("");
