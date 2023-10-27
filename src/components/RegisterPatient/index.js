@@ -13,7 +13,7 @@ const RegisterPatient = ({onClose}) => {
         const [senha, setSenha] = useState("")
         const [nomeDoResponsavel, setNomeDoResponsavel] = useState("")
         const [cpfDoResponsavel, setCPFDoResponsavel] = useState("")
-        const [message, setMessage] = useState("")
+        const [errorMessage, setErrorMessage] = useState("")
 
         const handleRegister = async () => {
             const paciente = {
@@ -41,14 +41,14 @@ const RegisterPatient = ({onClose}) => {
                 }
                 onClose()
             } catch (error) {
-                setMessage("Erro ao cadastrar o paciente. Verifique os dados informados.")
+                setErrorMessage("Erro ao cadastrar o paciente. Verifique os dados informados.")
             }
-        };
+        }
 
         return (
             <div className={styles.container}>
                 <h1 className={styles.primaryTitle}>Cadastrar paciente</h1>
-                {message && <p className={styles.errorMessage}>{message}</p>}
+                {errorMessage && <p className={styles.errorMessage}>{errorMessage}</p>}
                 <form className={styles.form}>
                     <div className={styles.inputField}>
                         <label htmlFor="name-input">Nome completo</label>

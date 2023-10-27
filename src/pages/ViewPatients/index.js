@@ -8,7 +8,7 @@ import DeletePatient from "../../components/DeletePatient";
 
 const ViewPatients = () => {
     const [patients, setPatients] = useState([])
-    const [message, setMessage] = useState(null)
+    const [errorMessage, setErrorMessage] = useState(null)
     const [selectedPatient, setSelectedPatient] = useState(null)
     const [selectedAction, setSelectedAction] = useState(null)
 
@@ -23,7 +23,7 @@ const ViewPatients = () => {
                 console.log(JSON.stringify(data))
                 setPatients(data)
             } catch (error) {
-                setMessage(error.message)
+                setErrorMessage(error.message)
             }
         }
         consult()

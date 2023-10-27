@@ -23,7 +23,7 @@ const EditPatient = ({ id, onClose }) => {
                     setNomeDoResponsavel(data.nomeDoResponsavel || "")
                     setCPFDoResponsavel(data.cpfDoResponsavel || "")
                 } catch (error) {
-                    setMessage(error.message)
+                    setErrorMessage(error.message)
                 }
             }
             consult()
@@ -38,7 +38,7 @@ const EditPatient = ({ id, onClose }) => {
         const [senha, setSenha] = useState("")
         const [nomeDoResponsavel, setNomeDoResponsavel] = useState("")
         const [cpfDoResponsavel, setCPFDoResponsavel] = useState("")
-        const [message, setMessage] = useState("")
+        const [errorMessage, setErrorMessage] = useState("")
 
         const handleEdit = async () => {
             const paciente = {
@@ -51,7 +51,7 @@ const EditPatient = ({ id, onClose }) => {
                 senha,
                 nomeDoResponsavel,
                 cpfDoResponsavel
-            };
+            }
 
             try {
                 const response = await fetch("http://localhost:8080/api/v1/pacientes/atualizar/" + id, {
@@ -66,14 +66,14 @@ const EditPatient = ({ id, onClose }) => {
                 }
                 onClose()
             } catch (error) {
-                setMessage("Erro ao editar o paciente. Verifique os dados informados.")
+                setErrorMessage("Erro ao editar o paciente. Verifique os dados informados.")
             }
-        };
+        }
 
         return (
             <div className={styles.container}>
                 <h1 className={styles.primaryTitle}>Editar paciente</h1>
-                {message && <p className={styles.errorMessage}>{message}</p>}
+                {errorMessage && <p className={styles.errorMessage}>{errorMessage}</p>}
                 <form className={styles.form}>
                     <div className={styles.inputField}>
                         <label htmlFor="name-input">Nome completo</label>
