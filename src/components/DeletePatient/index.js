@@ -4,7 +4,7 @@ import Modal from "../Modal";
 
 const DeletePatient = ({ id, onClose }) => {
     const Form = () => {
-        const [message, setMessage] = useState("");
+        const [message, setMessage] = useState("")
 
         const handleDelete = async () => {
             try {
@@ -14,7 +14,7 @@ const DeletePatient = ({ id, onClose }) => {
                 if (!response.ok) {
                     throw new Error("Erro ao excluir o paciente.")
                 }
-                onClose();
+                onClose()
             } catch (error) {
                 setMessage("Erro ao excluir o paciente. Verifique os dados informados.")
             }

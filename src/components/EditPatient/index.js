@@ -4,8 +4,6 @@ import Modal from "../Modal";
 
 const EditPatient = ({ id, onClose }) => {
     const Form = () => {
-        const [errorMessage, setErrorMessage] = useState(null);
-        
         useEffect(() => {
             const consult = async () => {
                 try {
@@ -15,32 +13,32 @@ const EditPatient = ({ id, onClose }) => {
                     }
                     const data = await response.json()
                     console.log(JSON.stringify(data))
-                    setNome(data.nome || "");
-                    setCPF(data.cpf || "");
-                    setDataDeNascimento(data.dataDeNascimento || "");
-                    setNumeroDeTelefone(data.numeroDeTelefone || "");
-                    setEndereco(data.endereco || "");
-                    setEmail(data.email || "");
-                    setSenha(data.senha || "");
-                    setNomeDoResponsavel(data.nomeDoResponsavel || "");
-                    setCPFDoResponsavel(data.cpfDoResponsavel || "");
+                    setNome(data.nome || "")
+                    setCPF(data.cpf || "")
+                    setDataDeNascimento(data.dataDeNascimento || "")
+                    setNumeroDeTelefone(data.numeroDeTelefone || "")
+                    setEndereco(data.endereco || "")
+                    setEmail(data.email || "")
+                    setSenha(data.senha || "")
+                    setNomeDoResponsavel(data.nomeDoResponsavel || "")
+                    setCPFDoResponsavel(data.cpfDoResponsavel || "")
                 } catch (error) {
-                    setErrorMessage(error.message)
+                    setMessage(error.message)
                 }
             }
             consult()
         })
 
-        const [nome, setNome] = useState("");
-        const [cpf, setCPF] = useState("");
-        const [dataDeNascimento, setDataDeNascimento] = useState("");
-        const [numeroDeTelefone, setNumeroDeTelefone] = useState("");
-        const [endereco, setEndereco] = useState("");
-        const [email, setEmail] = useState("");
-        const [senha, setSenha] = useState("");
-        const [nomeDoResponsavel, setNomeDoResponsavel] = useState("");
-        const [cpfDoResponsavel, setCPFDoResponsavel] = useState("");
-        const [message, setMessage] = useState("");
+        const [nome, setNome] = useState("")
+        const [cpf, setCPF] = useState("")
+        const [dataDeNascimento, setDataDeNascimento] = useState("")
+        const [numeroDeTelefone, setNumeroDeTelefone] = useState("")
+        const [endereco, setEndereco] = useState("")
+        const [email, setEmail] = useState("")
+        const [senha, setSenha] = useState("")
+        const [nomeDoResponsavel, setNomeDoResponsavel] = useState("")
+        const [cpfDoResponsavel, setCPFDoResponsavel] = useState("")
+        const [message, setMessage] = useState("")
 
         const handleEdit = async () => {
             const paciente = {
@@ -66,7 +64,7 @@ const EditPatient = ({ id, onClose }) => {
                 if (!response.ok) {
                     throw new Error("Erro ao editar o paciente.")
                 }
-                onClose();
+                onClose()
             } catch (error) {
                 setMessage("Erro ao editar o paciente. Verifique os dados informados.")
             }

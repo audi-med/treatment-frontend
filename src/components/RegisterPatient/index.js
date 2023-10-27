@@ -4,16 +4,16 @@ import Modal from "../Modal";
 
 const RegisterPatient = ({onClose}) => {
     const Form = () => {
-        const [nome, setNome] = useState("");
-        const [cpf, setCPF] = useState("");
-        const [dataDeNascimento, setDataDeNascimento] = useState("");
-        const [numeroDeTelefone, setNumeroDeTelefone] = useState("");
-        const [endereco, setEndereco] = useState("");
-        const [email, setEmail] = useState("");
-        const [senha, setSenha] = useState("");
-        const [nomeDoResponsavel, setNomeDoResponsavel] = useState("");
-        const [cpfDoResponsavel, setCPFDoResponsavel] = useState("");
-        const [message, setMessage] = useState("");
+        const [nome, setNome] = useState("")
+        const [cpf, setCPF] = useState("")
+        const [dataDeNascimento, setDataDeNascimento] = useState("")
+        const [numeroDeTelefone, setNumeroDeTelefone] = useState("")
+        const [endereco, setEndereco] = useState("")
+        const [email, setEmail] = useState("")
+        const [senha, setSenha] = useState("")
+        const [nomeDoResponsavel, setNomeDoResponsavel] = useState("")
+        const [cpfDoResponsavel, setCPFDoResponsavel] = useState("")
+        const [message, setMessage] = useState("")
 
         const handleRegister = async () => {
             const paciente = {
@@ -39,7 +39,7 @@ const RegisterPatient = ({onClose}) => {
                 if (!response.ok) {
                     throw new Error("Erro ao cadastrar o paciente.")
                 }
-                onClose();
+                onClose()
             } catch (error) {
                 setMessage("Erro ao cadastrar o paciente. Verifique os dados informados.")
             }

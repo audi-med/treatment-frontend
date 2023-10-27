@@ -7,10 +7,10 @@ import EditPatient from "../../components/EditPatient";
 import DeletePatient from "../../components/DeletePatient";
 
 const ViewPatients = () => {
-    const [patients, setPatients] = useState([]);
-    const [errorMessage, setErrorMessage] = useState(null);
-    const [selectedPatient, setSelectedPatient] = useState(null);
-    const [selectedAction, setSelectedAction] = useState(null);
+    const [patients, setPatients] = useState([])
+    const [message, setMessage] = useState(null)
+    const [selectedPatient, setSelectedPatient] = useState(null)
+    const [selectedAction, setSelectedAction] = useState(null)
 
     useEffect(() => {
         const consult = async () => {
@@ -23,25 +23,25 @@ const ViewPatients = () => {
                 console.log(JSON.stringify(data))
                 setPatients(data)
             } catch (error) {
-                setErrorMessage(error.message)
+                setMessage(error.message)
             }
         }
         consult()
     })
 
     const showRegisterPatient = () => {
-        setSelectedPatient(null);
-        setSelectedAction('register');
+        setSelectedPatient(null)
+        setSelectedAction('register')
     };
 
     const openPatientModal = (id, action) => {
-        setSelectedPatient(id);
-        setSelectedAction(action);
+        setSelectedPatient(id)
+        setSelectedAction(action)
     };
 
     const closePatientModal = () => {
-        setSelectedPatient(null);
-        setSelectedAction(null);
+        setSelectedPatient(null)
+        setSelectedAction(null)
     };
 
     return (
@@ -125,4 +125,4 @@ const ViewPatients = () => {
     );
 };
 
-export default ViewPatients;
+export default ViewPatients
