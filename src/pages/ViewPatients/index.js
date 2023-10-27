@@ -51,7 +51,7 @@ const ViewPatients = () => {
                 <div className={styles.optionsArea}>
                     <div className={styles.searchArea}>
                         <div className={styles.searchBar}>
-                            <button className={styles.searchIcon}>
+                            <button title="Pesquisar" className={styles.searchIcon}>
                                 <Icon icon="iconamoon:search-bold" />
                             </button>
                             <input className={styles.searchInput} placeholder="Pesquisar" />
@@ -90,10 +90,10 @@ const ViewPatients = () => {
                                     </td>
                                     <td className={styles.tableItem}>
                                         <div className={styles.actionsArea}>
-                                            <button className={styles.button} onClick={() => openPatientModal(patient.id, 'edit')}>
+                                            <button title="Editar" className={styles.button} onClick={() => openPatientModal(patient.id, 'edit')}>
                                                 <Icon icon="prime:pencil" />
                                             </button>
-                                            <button className={styles.button} onClick={() => openPatientModal(patient.id, 'delete')}>
+                                            <button title="Excluir" className={styles.button} onClick={() => openPatientModal(patient.id, 'delete')}>
                                                 <Icon icon="ic:outline-delete" />
                                             </button>
                                         </div>
