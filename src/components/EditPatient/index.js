@@ -79,39 +79,39 @@ const EditPatient = ({ id, onClose }) => {
                 <form className={styles.form}>
                     <div className={styles.inputField}>
                         <label htmlFor="name-input">Nome completo</label>
-                        <input className={styles.input} onChange={(e) => setNome(e.target.value)} value={nome} type="text" required />
+                        <input id="name-input" className={styles.input} onChange={(e) => setNome(e.target.value)} value={nome} type="text" required />
                     </div>
                     <div className={styles.inputField}>
                         <label htmlFor="cpf-input">CPF</label>
-                        <input className={styles.input} onChange={(e) => setCPF(e.target.value)} value={cpf} type="text" required />
+                        <input id="cpf-input" className={styles.input} onChange={(e) => setCPF(e.target.value)} value={cpf} type="text" required />
                     </div>
                     <div className={styles.inputField}>
                         <label htmlFor="birthdate-input">Data de nascimento</label>
-                        <input className={styles.input} onChange={(e) => setDataDeNascimento(e.target.value)} value={dataDeNascimento} type="text" required />
+                        <input id="birthdate-input" className={styles.input} onChange={(e) => setDataDeNascimento(e.target.value)} value={dataDeNascimento} type="text" required />
                     </div>
                     <div className={styles.inputField}>
                         <label htmlFor="phone-number-input">Número de telefone</label>
-                        <input className={styles.input} onChange={(e) => setNumeroDeTelefone(e.target.value)} value={numeroDeTelefone} type="text" required />
+                        <input id="phone-number-input" className={styles.input} onChange={(e) => setNumeroDeTelefone(e.target.value)} value={numeroDeTelefone} type="text" required />
                     </div>
                     <div className={styles.inputField}>
                         <label htmlFor="address-input">Endereço</label>
-                        <input className={styles.input} onChange={(e) => setEndereco(e.target.value)} value={endereco} type="text" required />
+                        <input id="address-input" className={styles.input} onChange={(e) => setEndereco(e.target.value)} value={endereco} type="text" required />
                     </div>
                     <div className={styles.inputField}>
                         <label htmlFor="email-input">E-mail</label>
-                        <input className={styles.input} onChange={(e) => setEmail(e.target.value)} value={email} type="text" required />
+                        <input id="email-input" className={styles.input} onChange={(e) => setEmail(e.target.value)} value={email} type="text" required />
                     </div>
                     <div className={styles.inputField}>
                         <label htmlFor="password-input">Senha</label>
-                        <input className={styles.input} onChange={(e) => setSenha(e.target.value)} value={senha} type="password" required />
+                        <input id="password-input" className={styles.input} onChange={(e) => setSenha(e.target.value)} value={senha} type="password" required />
                     </div>
                     <div className={styles.inputField}>
                         <label htmlFor="responsible-name-input">Nome do responsável</label>
-                        <input className={styles.input} onChange={(e) => setNomeDoResponsavel(e.target.value)} value={nomeDoResponsavel} type="text" required />
+                        <input id="responsible-name-input" className={styles.input} onChange={(e) => setNomeDoResponsavel(e.target.value)} value={nomeDoResponsavel} type="text" required />
                     </div>
                     <div className={styles.inputField}>
                         <label htmlFor="responsible-cpf-input">CPF do responsável</label>
-                        <input className={styles.input} onChange={(e) => setCPFDoResponsavel(e.target.value)} value={cpfDoResponsavel} type="text" required />
+                        <input id="responsible-cpf-input" className={styles.input} onChange={(e) => setCPFDoResponsavel(e.target.value)} value={cpfDoResponsavel} type="text" required />
                     </div>
                     <button className={styles.primaryButton} onClick={handleEdit} type="submit">Salvar</button>
                 </form>
