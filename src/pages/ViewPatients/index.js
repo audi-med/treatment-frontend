@@ -32,17 +32,17 @@ const ViewPatients = () => {
     const showRegisterPatient = () => {
         setSelectedPatient(null)
         setSelectedAction('register')
-    };
+    }
 
     const openPatientModal = (id, action) => {
         setSelectedPatient(id)
         setSelectedAction(action)
-    };
+    }
 
     const closePatientModal = () => {
         setSelectedPatient(null)
         setSelectedAction(null)
-    };
+    }
 
     return (
         <div className={styles.container}>
@@ -122,7 +122,7 @@ const ViewPatients = () => {
                 )}
             </div>
         </div>
-    );
-};
+    )
+}
 
 export default ViewPatients
