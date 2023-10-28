@@ -1,52 +1,50 @@
 import { React, useState } from "react";
 import styles from "./styles.module.css";
-import Modal from "../Modal";
 
 const RegisterPatient = ({onClose}) => {
-    const Form = () => {
-        const [nome, setNome] = useState("")
-        const [cpf, setCPF] = useState("")
-        const [dataDeNascimento, setDataDeNascimento] = useState("")
-        const [numeroDeTelefone, setNumeroDeTelefone] = useState("")
-        const [endereco, setEndereco] = useState("")
-        const [email, setEmail] = useState("")
-        const [senha, setSenha] = useState("")
-        const [nomeDoResponsavel, setNomeDoResponsavel] = useState("")
-        const [cpfDoResponsavel, setCPFDoResponsavel] = useState("")
-        const [errorMessage, setErrorMessage] = useState("")
+    const [nome, setNome] = useState("")
+    const [cpf, setCPF] = useState("")
+    const [dataDeNascimento, setDataDeNascimento] = useState("")
+    const [numeroDeTelefone, setNumeroDeTelefone] = useState("")
+    const [endereco, setEndereco] = useState("")
+    const [email, setEmail] = useState("")
+    const [senha, setSenha] = useState("")
+    const [nomeDoResponsavel, setNomeDoResponsavel] = useState("")
+    const [cpfDoResponsavel, setCPFDoResponsavel] = useState("")
+    const [errorMessage, setErrorMessage] = useState("")
 
-        const handleRegister = async () => {
-            const paciente = {
-                nome,
-                cpf,
-                dataDeNascimento,
-                numeroDeTelefone,
-                endereco,
-                email,
-                senha,
-                nomeDoResponsavel,
-                cpfDoResponsavel
-            }
-
-            try {
-                const response = await fetch("http://localhost:8080/api/v1/pacientes/cadastro", {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
-                    body: JSON.stringify(paciente)
-                })
-                if (!response.ok) {
-                    throw new Error("Erro ao cadastrar o paciente.")
-                }
-                onClose()
-            } catch (error) {
-                setErrorMessage("Erro ao cadastrar o paciente. Verifique os dados informados.")
-            }
+    const handleRegister = async () => {
+        const paciente = {
+            nome,
+            cpf,
+            dataDeNascimento,
+            numeroDeTelefone,
+            endereco,
+            email,
+            senha,
+            nomeDoResponsavel,
+            cpfDoResponsavel
         }
 
-        return (
-            <div className={styles.container}>
+        try {
+            const response = await fetch("http://localhost:8080/api/v1/pacientes/cadastro", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(paciente)
+            })
+            if (!response.ok) {
+                throw new Error("Erro ao cadastrar o paciente.")
+            }
+            onClose()
+        } catch (error) {
+            setErrorMessage("Erro ao cadastrar o paciente. Verifique os dados informados.")
+        }
+    }
+
+    return (
+        <div className={styles.container}>
                 <h1 className={styles.primaryTitle}>Cadastrar paciente</h1>
                 {errorMessage && <p className={styles.errorMessage}>{errorMessage}</p>}
                 <form className={styles.form}>
@@ -89,12 +87,6 @@ const RegisterPatient = ({onClose}) => {
                     <button className={styles.primaryButton} onClick={handleRegister} type="submit">Cadastrar</button>
                 </form>
             </div>
-        )
-    }
-
-
-    return (
-        <Modal onClose={onClose} content={Form}/>
     )
 }
 

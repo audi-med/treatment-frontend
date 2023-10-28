@@ -25,7 +25,7 @@ const Modal = ({ onClose, content }) => {
                                 <Icon icon="tabler:x" />
                             </button>
                         </div>
-                        {content()}
+                        {content}
                     </div>
                 </div>
             </div>

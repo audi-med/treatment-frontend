@@ -103,10 +103,6 @@
     text-align: left;
 }
 
-.paragraph {
-    font-size: 0.875rem;
-}
-
 .cardLink {
     color: inherit;
     text-decoration: none;
@@ -145,4 +141,12 @@
     height: 100%;
     text-align: center;
     width: 100%;
+}
+
+.errorMessage {
+    color: #f00;
+}
+
+.paragraph, .errorMessage {
+    font-size: 0.875rem;
 }
