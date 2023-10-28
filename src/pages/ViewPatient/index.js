@@ -19,21 +19,32 @@ const ViewPatient = () => {
                 console.log(JSON.stringify(data))
                 setPatient(data)
             } catch (error) {
-                setErrorMessage(error.message)
+                setErrorMessage("Erro ao exibir os dados do paciente.")
             }
         }
         consult()
     }, [id])
 
     return (
-        <div className={styles.contentArea}>
-            <p>Nome: {patient.nome}</p>
-            <p>CPF: {patient.cpf}</p>
-            <p>Data de nascimento: {patient.dataDeNascimento}</p>
-            <p>Numero de telefone: {patient.numeroDeTelefone}</p>
-            <p>Endereço: {patient.endereco}</p>
-            <p>Nome do responsavel: {patient.nomeDoResponsavel}</p>
-            <p>CPF do responsavel: {patient.cpfDoResponsavel}</p>
+        <div className={styles.container}>
+            <div className={styles.contentArea}>
+                <h1 className={styles.primaryTitle}>Paciente</h1>
+                {errorMessage === null ? (
+                    <div>
+                        <p>Nome: {patient.nome}</p>
+                        <p>CPF: {patient.cpf}</p>
+                        <p>Data de nascimento: {patient.dataDeNascimento}</p>
+                        <p>Numero de telefone: {patient.numeroDeTelefone}</p>
+                        <p>Endereço: {patient.endereco}</p>
+                        <p>Nome do responsavel: {patient.nomeDoResponsavel}</p>
+                        <p>CPF do responsavel: {patient.cpfDoResponsavel}</p>
+                    </div>
+                ):(
+                    <div className={styles.messageArea}>
+                        <p className={styles.errorMessage}>{errorMessage}</p>
+                    </div>
+                )}
+            </div>
         </div>
     )
 }
