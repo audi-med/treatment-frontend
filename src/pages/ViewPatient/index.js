@@ -30,7 +30,7 @@ const ViewPatient = () => {
             <div className={styles.contentArea}>
                 <h1 className={styles.primaryTitle}>Paciente</h1>
                 {errorMessage === null ? (
-                    <div>
+                    <div className={styles.patientDataArea}>
                         <p>Nome: {patient.nome}</p>
                         <p>CPF: {patient.cpf}</p>
                         <p>Data de nascimento: {patient.dataDeNascimento}</p>
