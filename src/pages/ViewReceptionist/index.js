@@ -2,8 +2,8 @@ import { React, useState, useEffect } from "react";
 import styles from "./styles.module.css";
 import { useParams } from "react-router-dom";
 
-const ViewPatient = () => {
-    const [patient, setPatient] = useState([]);
+const ViewReceptionist = () => {
+    const [receptionist, setReceptionist] = useState([]);
     const [errorMessage, setErrorMessage] = useState(null);
 
     const {id} = useParams();
@@ -11,15 +11,15 @@ const ViewPatient = () => {
     useEffect(() => {
         const consult = async () => {
             try {
-                const response = await fetch("http://localhost:8080/api/v1/pacientes/" + id)
+                const response = await fetch("http://localhost:8080/api/v1/recepcionistas/" + id)
                 if (!response.ok) {
                     throw new Error()
                 }
                 const data = await response.json()
                 console.log(JSON.stringify(data))
-                setPatient(data)
+                setReceptionist(data)
             } catch (error) {
-                setErrorMessage("Erro ao exibir os dados do paciente.")
+                setErrorMessage("Erro ao exibir os dados do recepcionista.")
             }
         }
         consult()
@@ -28,16 +28,13 @@ const ViewPatient = () => {
     return (
         <div className={styles.container}>
             <div className={styles.contentArea}>
-                <h1 className={styles.primaryTitle}>Paciente</h1>
+                <h1 className={styles.primaryTitle}>Recepcionista</h1>
                 {errorMessage === null ? (
                     <div className={styles.dataArea}>
-                        <p>Nome: {patient.nome}</p>
-                        <p>CPF: {patient.cpf}</p>
-                        <p>Data de nascimento: {patient.dataDeNascimento}</p>
-                        <p>Numero de telefone: {patient.numeroDeTelefone}</p>
-                        <p>Endereço: {patient.endereco}</p>
-                        <p>Nome do responsavel: {patient.nomeDoResponsavel}</p>
-                        <p>CPF do responsavel: {patient.cpfDoResponsavel}</p>
+                        <p>Nome: {receptionist.nome}</p>
+                        <p>CPF: {receptionist.cpf}</p>
+                        <p>E-mail: {receptionist.email}</p>
+                        <p>Senha: {receptionist.senha}</p>
                     </div>
                 ):(
                     <div className={styles.messageArea}>
@@ -49,4 +46,4 @@ const ViewPatient = () => {
     )
 }
 
-export default ViewPatient
+export default ViewReceptionist
