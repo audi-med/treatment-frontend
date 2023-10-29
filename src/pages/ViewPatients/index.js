@@ -10,7 +10,7 @@ import DeletePatient from "../../components/DeletePatient";
 const ViewPatients = () => {
     const [patients, setPatients] = useState([])
     const [errorMessage, setErrorMessage] = useState(null)
-    const [selectedPatient, setSelectedPatient] = useState(null)
+    const [selectedItem, setSelectedItem] = useState(null)
     const [selectedAction, setSelectedAction] = useState(null)
 
     useEffect(() => {
@@ -30,18 +30,13 @@ const ViewPatients = () => {
         consult()
     })
 
-    const showRegisterPatient = () => {
-        setSelectedPatient(null)
-        setSelectedAction('register')
-    }
-
-    const openPatientModal = (id, action) => {
-        setSelectedPatient(id)
+    const openModal = (id, action) => {
+        setSelectedItem(id)
         setSelectedAction(action)
     }
 
-    const closePatientModal = () => {
-        setSelectedPatient(null)
+    const closeModal = () => {
+        setSelectedItem(null)
         setSelectedAction(null)
     }
 
@@ -62,7 +57,7 @@ const ViewPatients = () => {
                             Filtrar
                         </button>
                     </div>
-                    <button className={styles.primaryButton} onClick={showRegisterPatient}>
+                    <button className={styles.primaryButton} onClick={() => openModal(null, 'register')}>
                         <Icon className={styles.icon} icon="akar-icons:plus" />
                         Cadastrar paciente
                     </button>
@@ -92,10 +87,10 @@ const ViewPatients = () => {
                                         </td>
                                         <td className={styles.tableItem}>
                                             <div className={styles.actionsArea}>
-                                                <button title="Editar" className={styles.button} onClick={() => openPatientModal(patient.id, 'edit')}>
+                                                <button title="Editar" className={styles.button} onClick={() => openModal(patient.id, 'edit')}>
                                                     <Icon icon="prime:pencil" />
                                                 </button>
-                                                <button title="Excluir" className={styles.button} onClick={() => openPatientModal(patient.id, 'delete')}>
+                                                <button title="Excluir" className={styles.button} onClick={() => openModal(patient.id, 'delete')}>
                                                     <Icon icon="ic:outline-delete" />
                                                 </button>
                                             </div>
@@ -115,15 +110,15 @@ const ViewPatients = () => {
                     </div>
                 )}
                 {selectedAction === 'register' && (
-                    <Modal onClose={closePatientModal} content={<RegisterPatient onClose={closePatientModal} />} />
+                    <Modal onClose={closeModal} content={<RegisterPatient onClose={closeModal} />} />
                 )}
-                {selectedPatient !== null && (
+                {selectedItem !== null && (
                     <div>
                         {selectedAction === 'edit' && (
-                            <Modal onClose={closePatientModal} content={<EditPatient id={selectedPatient} onClose={closePatientModal} />} />
+                            <Modal onClose={closeModal} content={<EditPatient id={selectedItem} onClose={closeModal} />} />
                         )}
                         {selectedAction === 'delete' && (
-                            <Modal onClose={closePatientModal} content={<DeletePatient id={selectedPatient} onClose={closePatientModal} />} />
+                            <Modal onClose={closeModal} content={<DeletePatient id={selectedItem} onClose={closeModal} />} />
                         )}
                     </div>
                 )}
