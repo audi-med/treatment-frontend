@@ -19,6 +19,12 @@
     text-align: center;
 }
 
+.textArea {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
 .buttonsArea {
     display: flex;
     gap: 1.5rem;
