@@ -19,6 +19,11 @@
     text-align: center;
 }
 
+.buttonsArea {
+    display: flex;
+    gap: 1.5rem;
+}
+
 .primaryButton {
     background-color: #164755;
     border: none;
