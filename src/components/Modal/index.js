@@ -5,12 +5,12 @@ import { Icon } from '@iconify/react';
 const Modal = ({ onClose, content }) => {
     const closeByBackground = (e) => {
         if (e.target === e.currentTarget) {
-            onClose();
+            onClose()
         }
     }
 
     const closeByButton = () => {
-        onClose();
+        onClose()
     }
 
 
