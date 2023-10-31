@@ -20,7 +20,7 @@ const EditReceptionist = ({ id, onClose }) => {
             }
         }
         consult()
-    })
+    }, [])
 
     const [nome, setNome] = useState("")
     const [cpf, setCPF] = useState("")
