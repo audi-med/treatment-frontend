@@ -1,23 +1,10 @@
-.mainContainer, .mainContentArea {
+.modalContainer {
     height: 100%;
     left: 0;
     position: fixed;
     top: 0;
     width: 100%;
-}
-
-.mainContentArea {
     overflow-y: auto;
-}
-
-.shadow {
-    background-color: #000;
-    height: 100%;
-    left: 0;
-    opacity: 40%;
-    position: fixed;
-    top: 0;
-    width: 100%;
 }
 
 .container {
@@ -28,7 +15,16 @@
     left: 0;
     min-height: 100%;
     padding: 2.5rem;
-    position: relative;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.shadow {
+    background-color: #00000040;
+    height: 100%;
+    left: 0;
+    position: absolute;
     top: 0;
     width: 100%;
 }
@@ -40,6 +36,7 @@
     max-width: 28rem;
     padding: 1.5rem;
     width: 100%;
+    position: relative;
 }
 
 .topArea {
