@@ -34,7 +34,6 @@ const ViewReceptionist = () => {
                         <p>Nome: {receptionist.nome}</p>
                         <p>CPF: {receptionist.cpf}</p>
                         <p>E-mail: {receptionist.email}</p>
-                        <p>Senha: {receptionist.senha}</p>
                     </div>
                 ):(
                     <div className={styles.messageArea}>
