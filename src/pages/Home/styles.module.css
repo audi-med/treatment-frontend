@@ -36,7 +36,7 @@
 }
 
 .primaryButton {
-    background-color: #164755;
+    background-color: #265DA4;
     border: none;
     border-radius: 0.25rem;
     color: #fff;
@@ -68,7 +68,7 @@
 }
 
 .highlightText {
-    color: #164755;
+    color: #265DA4;
     font-size: 1.75rem;
     font-weight: bold;
 }
@@ -86,6 +86,6 @@
 }
 
 .benefitIcon {
-    color: #164755;
+    color: #265DA4;
     font-size: 1.25rem;
 }
