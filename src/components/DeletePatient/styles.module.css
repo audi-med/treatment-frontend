@@ -42,6 +42,18 @@
     width: 100%;
 }
 
-.paragraph, .primaryButton {
+.secondaryButton {
+    background-color: #f5f5f5;
+    border: none;
+    font-weight: bold;
+    border-radius: 0.25rem;
+    color: #000;
+    cursor: pointer;
+    padding-block: 0.75rem;
+    padding-inline: 1rem;
+    width: 100%;
+}
+
+.paragraph, .primaryButton, .secondaryButton {
     font-size: 0.875rem;
 }

@@ -26,7 +26,7 @@ const DeletePatient = ({ id, onClose }) => {
                 <p className={styles.paragraph}>Tem certeza de que deseja excluir o paciente?</p>
                 <div className={styles.buttonsArea}>
                     <button className={styles.primaryButton} onClick={handleDelete}>Excluir</button>
-                    <button className={styles.primaryButton} onClick={onClose}>Cancelar</button>
+                    <button className={styles.secondaryButton} onClick={onClose}>Cancelar</button>
                 </div>
             </div>
         </div>
