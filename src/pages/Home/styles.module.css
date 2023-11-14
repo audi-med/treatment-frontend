@@ -10,17 +10,23 @@
 .section {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 2.5rem;
     padding: 2.5rem;
     text-align: center;
     width: 100%;
 }
 
 .contentArea {
+    align-items: center;
     display: flex;
+    flex-direction: column;
     gap: 1.5rem;
-    justify-content: center;
-    width: 100%;
+}
+
+.smallCard {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
 .primaryTitle {
@@ -48,10 +54,17 @@
     text-decoration: none;
 }
 
-.grid {
-    display: grid;
+.benefitsGrid {
+    grid-template-columns: repeat(auto-fit, minmax(auto, 12rem));
+}
+
+.licenseGrid {
     grid-template-columns: repeat(auto-fit, minmax(auto, 16rem));
-    grid-gap: 1.5rem;
+}
+
+.benefitsGrid, .licenseGrid {
+    display: grid;
+    grid-gap: 2.5rem;
     justify-content: center;
 }
 
@@ -69,7 +82,7 @@
 
 .highlightText {
     color: #265DA4;
-    font-size: 1.75rem;
+    font-size: 2.25rem;
     font-weight: bold;
 }
 
