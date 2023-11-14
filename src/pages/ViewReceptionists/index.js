@@ -21,7 +21,6 @@ const ViewReceptionists = () => {
                     throw new Error()
                 }
                 const data = await response.json()
-                console.log(JSON.stringify(data))
                 setReceptionists(data)
             } catch (error) {
                 setErrorMessage("Erro ao exibir os dados dos recepcionistas.")
@@ -50,7 +49,7 @@ const ViewReceptionists = () => {
                             <button title="Pesquisar" className={styles.searchIcon}>
                                 <Icon icon="iconamoon:search-bold" />
                             </button>
-                            <input className={styles.searchInput} placeholder="Pesquisar" />
+                            <input id="search-input" className={styles.searchInput} placeholder="Pesquisar" />
                         </div>
                         <button className={styles.primaryButton}>
                             <Icon className={styles.icon} icon="ion:filter" />
@@ -69,6 +68,7 @@ const ViewReceptionists = () => {
                                 <tr className={styles.tableRow}>
                                     <th className={styles.tableItem}><h2 className={styles.secondaryTitle}>#</h2></th>
                                     <th className={styles.tableItem}><h2 className={styles.secondaryTitle}>Nome</h2></th>
+                                    <th className={styles.tableItem}><h2 className={styles.secondaryTitle}>CPF</h2></th>
                                     <th className={styles.tableItem}><h2 className={styles.secondaryTitle}>Ações</h2></th>
                                 </tr>
                             </thead>
@@ -84,6 +84,9 @@ const ViewReceptionists = () => {
                                                     {receptionist.nome}
                                                 </Link>
                                             </p>
+                                        </td>
+                                        <td className={styles.tableItem}>
+                                            <p className={styles.paragraph}>{receptionist.cpf}</p>
                                         </td>
                                         <td className={styles.tableItem}>
                                             <div className={styles.actionsArea}>

@@ -21,7 +21,6 @@ const ViewPatients = () => {
                     throw new Error()
                 }
                 const data = await response.json()
-                console.log(JSON.stringify(data))
                 setPatients(data)
             } catch (error) {
                 setErrorMessage("Erro ao exibir os dados dos pacientes.")
@@ -50,7 +49,7 @@ const ViewPatients = () => {
                             <button title="Pesquisar" className={styles.searchIcon}>
                                 <Icon icon="iconamoon:search-bold" />
                             </button>
-                            <input className={styles.searchInput} placeholder="Pesquisar" />
+                            <input id="search-input" className={styles.searchInput} placeholder="Pesquisar" />
                         </div>
                         <button className={styles.primaryButton}>
                             <Icon className={styles.icon} icon="ion:filter" />
@@ -69,6 +68,7 @@ const ViewPatients = () => {
                                 <tr className={styles.tableRow}>
                                     <th className={styles.tableItem}><h2 className={styles.secondaryTitle}>#</h2></th>
                                     <th className={styles.tableItem}><h2 className={styles.secondaryTitle}>Nome</h2></th>
+                                    <th className={styles.tableItem}><h2 className={styles.secondaryTitle}>CPF</h2></th>
                                     <th className={styles.tableItem}><h2 className={styles.secondaryTitle}>Ações</h2></th>
                                 </tr>
                             </thead>
@@ -84,6 +84,9 @@ const ViewPatients = () => {
                                                     {patient.nome}
                                                 </Link>
                                             </p>
+                                        </td>
+                                        <td className={styles.tableItem}>
+                                            <p className={styles.paragraph}>{patient.cpf}</p>
                                         </td>
                                         <td className={styles.tableItem}>
                                             <div className={styles.actionsArea}>

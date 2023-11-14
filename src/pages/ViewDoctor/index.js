@@ -16,7 +16,6 @@ const ViewDoctor = () => {
                     throw new Error()
                 }
                 const data = await response.json()
-                console.log(JSON.stringify(data))
                 setDoctor(data)
             } catch (error) {
                 setErrorMessage("Erro ao exibir os dados do médico.")
@@ -33,6 +32,7 @@ const ViewDoctor = () => {
                     <div className={styles.dataArea}>
                         <p>Nome: {doctor.nome}</p>
                         <p>CPF: {doctor.cpf}</p>
+                        <p>CRM: {doctor.crm}</p>
                         <p>E-mail: {doctor.email}</p>
                         <p>Senha: {doctor.senha}</p>
                     </div>

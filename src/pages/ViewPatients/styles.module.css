@@ -1,7 +1,6 @@
 .container {
     background-color: #f5f5f5;
     display: flex;
-    justify-content: center;
     align-items: center;
     flex-direction: column;
     gap: 2.5rem;
@@ -27,6 +26,7 @@
 }
 
 .optionsArea {
+    align-items: center;
     display: flex;
     justify-content: space-between;
     gap: 1.5rem;
@@ -73,12 +73,11 @@
     color: #fff;
     cursor: pointer;
     display: flex;
+    font-size: 0.875rem;
     font-weight: bold;
     gap: 0.5rem;
-    outline: none;
     padding-block: 0.75rem;
     padding-inline: 1rem;
-    font-size: 0.875rem;
     text-decoration: none;
 }
 
