@@ -7,6 +7,7 @@ import ViewReceptionists from "../pages/ViewReceptionists";
 import ViewReceptionist from "../pages/ViewReceptionist";
 import ViewPatients from "../pages/ViewPatients";
 import ViewPatient from "../pages/ViewPatient";
+import Exam from "../pages/Exam";
 
 const PagesRoutes = () => {
     return (
@@ -20,6 +21,7 @@ const PagesRoutes = () => {
                 <Route path="/receptionists/:id" element={<ViewReceptionist/>}/>
                 <Route path="/patients" element={<ViewPatients/>}/>
                 <Route path="/patients/:id" element={<ViewPatient/>}/>
+                <Route path="/exam" element={<Exam/>}/>
             </Routes>
         </Router>
     )
