@@ -79,6 +79,7 @@ const Exam = () => {
                             <input id="word-input" className={styles.input} onChange={(e) => setWord(e.target.value)} type="text" required/>
                         </div>
                         <button className={styles.primaryButton} onClick={() => handleVerify(word)}>Verificar resposta</button>
+                        <p className={styles.paragraph}>{i + 1} de {questions.length}</p>
                         <div className={styles.buttonsArea}>
                             {i === 0 ? (
                                 <button className={styles.secondaryButton} disabled>Anterior</button>
