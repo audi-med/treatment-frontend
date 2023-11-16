@@ -2,7 +2,6 @@ import { React, useState, useEffect } from "react";
 import styles from "./styles.module.css";
 
 const Exam = () => {
-    const [audios, setAudios] = useState([])
     const [questions, setQuestions] = useState([])
     const [errorMessage, setErrorMessage] = useState(null)
     const [word, setWord] = useState("")
@@ -12,13 +11,12 @@ const Exam = () => {
     useEffect(() => {
         const consult = async () => {
             try {
-                const response = await fetch("http://localhost:8080/api/v1/exame")
+                const response = await fetch("http://localhost:8080/api/v1/tratamento/audio")
                 if (!response.ok) {
                     throw new Error()
                 }
                 const data = await response.json()
-                setAudios(data[0])
-                setQuestions(data[1])
+                setQuestions(data)
             } catch (error) {
                 setErrorMessage("Erro ao exibir o tratamento.")
             }
@@ -65,7 +63,7 @@ const Exam = () => {
                 {errorMessage !== null ? (
                     <div className={styles.dataArea}>
                         <div className={styles.audioArea}>
-                            <audio src={audios[i]} controls></audio>
+                            <audio src={questions[i].audio} controls></audio>
                             {answered && (
                                 correctAnswer ? (
                                     <p className={styles.correctAnswer}>Resposta correta</p>
