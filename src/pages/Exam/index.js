@@ -29,7 +29,7 @@ const Exam = () => {
             setAnswered(true)
         }
 
-        if (response.toLowerCase().replace(/\s/g, '') === questions[i]) {
+        if (response.toLowerCase().replace(/\s/g, '') === questions[i].palavra) {
             setCorrectAnswer(true)
         } else {
             setCorrectAnswer(false)
