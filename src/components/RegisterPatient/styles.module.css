@@ -14,9 +14,38 @@
     margin-bottom: 1.5rem;
 }
 
+
+
 .errorMessage {
     color: #f00;
     text-align: center;
+}
+
+
+.field .error{
+
+    align-items: center;
+    margin-top: 6px;
+    color: #d93025;
+    font-size: 14px;
+    display: none;
+}
+
+.invalid .error{
+    display: flex;
+}
+
+.error .error-icon{
+    margin-right: 6px;
+    font-size: 15px;
+}
+
+.create-password .error{
+    align-items: flex-start;
+}
+
+.create-password .error-icon{
+    margin-top: 4px;
 }
 
 .inputField {
@@ -36,6 +65,10 @@ label {
     border-radius: 0.25rem;
     font-size: 0.875rem;
     width: 100%;
+}
+
+.invalid .input{
+    border-color: #d93025;
 }
 
 .primaryButton {
