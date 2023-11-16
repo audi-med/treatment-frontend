@@ -6,6 +6,8 @@ const Exam = () => {
     const [questions, setQuestions] = useState([])
     const [errorMessage, setErrorMessage] = useState(null)
     const [word, setWord] = useState("")
+    const [answered, setAnswered] = useState(false)
+    const [correctAnswer, setCorrectAnswer] = useState(false)
 
     useEffect(() => {
         const consult = async () => {
@@ -22,11 +24,17 @@ const Exam = () => {
             }
         }
         consult()
-    }, [i])
+    }, [])
 
     const handleVerify = async (response) => {
-        if (response.toLowerCase().replace(/\s/g, '') === questions[i]) {
+        if (!response) {
+            setAnswered(true)
+        }
 
+        if (response.toLowerCase().replace(/\s/g, '') === questions[i]) {
+            setCorrectAnswer(true)
+        } else {
+            setCorrectAnswer(false)
         }
     }
 
@@ -40,10 +48,14 @@ const Exam = () => {
     }
 
     const increaseIndex = async () => {
-        if (i < questions.length) {
+        if (i < questions.length - 1) {
             i += 1
         }
         console.log(i)
+    }
+
+    const handleFinalize = async () => {
+        
     }
 
     return (
@@ -54,6 +66,13 @@ const Exam = () => {
                     <div className={styles.dataArea}>
                         <div className={styles.audioArea}>
                             <audio src={audios[i]} controls></audio>
+                            {answered && (
+                                correctAnswer ? (
+                                    <p className={styles.correctAnswer}>Resposta correta</p>
+                                ) : (
+                                    <p className={styles.incorrectAnswer}>Resposta incorreta</p>
+                                )
+                            )}
                         </div>
                         <div className={styles.inputField}>
                             <label htmlFor="word-input">Digite a palavra do áudio</label>
@@ -61,8 +80,19 @@ const Exam = () => {
                         </div>
                         <button className={styles.primaryButton} onClick={() => handleVerify(word)}>Verificar resposta</button>
                         <div className={styles.buttonsArea}>
-                            <button className={styles.secondaryButton} onClick={() => decreaseIndex()}>Anterior</button>
-                            <button className={styles.secondaryButton} onClick={() => increaseIndex()}>Próximo</button>
+                            {i === 0 ? (
+                                <button className={styles.secondaryButton} disabled>Anterior</button>
+                            ):(
+                                <button className={styles.secondaryButton} onClick={() => decreaseIndex()}>Anterior</button>
+                            )}
+                            {questions.length === 0 || i === questions.length - 1 || answered === false ? (
+                                <button className={styles.secondaryButton} disabled>Próximo</button>
+                            ):(
+                                <button className={styles.secondaryButton} onClick={() => increaseIndex()}>Próximo</button>
+                            )}
+                            {i === questions.length - 1 && (
+                                <button className={styles.secondaryButton} onClick={() => handleFinalize()}>Finalizar</button>
+                            )}
                         </div>
                     </div>
                 ):(
