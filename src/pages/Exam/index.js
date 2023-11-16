@@ -61,7 +61,7 @@ const Exam = () => {
     return (
         <div className={styles.container}>
             <div className={styles.contentArea}>
-                <h1 className={styles.primaryTitle}>Exame</h1>
+                <h1 className={styles.primaryTitle}>Tratamento</h1>
                 {errorMessage !== null ? (
                     <div className={styles.dataArea}>
                         <div className={styles.audioArea}>
