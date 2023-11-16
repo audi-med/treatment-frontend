@@ -4,18 +4,17 @@
     align-items: center;
     flex-direction: column;
     gap: 2.5rem;
+    justify-content: center;
     height: calc(100vh - 3.5rem);
     padding: 2.5rem;
 }
 
 .contentArea {
-    align-items: center;
     background-color: #fff;
     border-radius: 0.5rem;
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    height: 100%;
     max-width: 28rem;
     overflow-y: auto;
     padding: 1.5rem;
@@ -89,6 +88,14 @@ label {
 .input, .primaryButton, .secondaryButton {
     padding-block: 0.75rem;
     padding-inline: 1rem;
+}
+
+.paragraph {
+    font-size: 0.875rem;
+}
+
+.primaryTitle, .paragraph {
+    text-align: center;
 }
 
 .buttonsArea {
