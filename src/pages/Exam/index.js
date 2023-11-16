@@ -60,7 +60,7 @@ const Exam = () => {
         <div className={styles.container}>
             <div className={styles.contentArea}>
                 <h1 className={styles.primaryTitle}>Tratamento</h1>
-                {errorMessage !== null ? (
+                {errorMessage === null ? (
                     <div className={styles.dataArea}>
                         <div className={styles.audioArea}>
                             <audio src={questions[i].audio} controls></audio>
