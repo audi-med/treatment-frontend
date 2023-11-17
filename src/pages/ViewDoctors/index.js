@@ -6,6 +6,7 @@ import Modal from "../../components/Modal";
 import RegisterDoctor from "../../components/RegisterDoctor";
 import EditDoctor from "../../components/EditDoctor";
 import DeleteDoctor from "../../components/DeleteDoctor";
+import NavBar from "../../components/NavBar";
 
 const ViewDoctors = () => {
     const [doctors, setDoctors] = useState([])
@@ -42,6 +43,7 @@ const ViewDoctors = () => {
     return (
         <div className={styles.container}>
             <div className={styles.contentArea}>
+                <NavBar/>
                 <h1 className={styles.primaryTitle}>Médicos</h1>
                 <div className={styles.optionsArea}>
                     <div className={styles.searchArea}>

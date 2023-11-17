@@ -6,6 +6,7 @@ import Modal from "../../components/Modal";
 import RegisterReceptionist from "../../components/RegisterReceptionist";
 import EditReceptionist from "../../components/EditReceptionist";
 import DeleteReceptionist from "../../components/DeleteReceptionist";
+import NavBar from "../../components/NavBar";
 
 const ViewReceptionists = () => {
     const [receptionists, setReceptionists] = useState([])
@@ -42,6 +43,7 @@ const ViewReceptionists = () => {
     return (
         <div className={styles.container}>
             <div className={styles.contentArea}>
+                <NavBar/>
                 <h1 className={styles.primaryTitle}>Recepcionistas</h1>
                 <div className={styles.optionsArea}>
                     <div className={styles.searchArea}>

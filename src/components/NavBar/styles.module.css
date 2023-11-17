@@ -1,0 +1,13 @@
+.navBar {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.navBarLink {
+    text-decoration: none;
+}
+
+.paragraph {
+    color: #000;
+    font-size: 0.875rem;
+}
