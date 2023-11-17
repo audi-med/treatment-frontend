@@ -63,45 +63,47 @@ const ViewPatients = () => {
                 </div>
                 {errorMessage === null ? (
                     patients.length > 0 ? (
-                        <table className={styles.table}>
-                            <thead className={styles.tableHeader}>
-                                <tr className={styles.tableRow}>
-                                    <th className={styles.tableItem}><h2 className={styles.secondaryTitle}>#</h2></th>
-                                    <th className={styles.tableItem}><h2 className={styles.secondaryTitle}>Nome</h2></th>
-                                    <th className={styles.tableItem}><h2 className={styles.secondaryTitle}>CPF</h2></th>
-                                    <th className={styles.tableItem}><h2 className={styles.secondaryTitle}>Ações</h2></th>
-                                </tr>
-                            </thead>
-                            <tbody className={styles.tableBody}>
-                                {patients.map((patient, i) => (
-                                    <tr className={styles.tableRow} key={patient.id}>
-                                        <td className={styles.tableItem}>
-                                            <p className={styles.paragraph}>{i + 1}</p>
-                                        </td>
-                                        <td className={styles.tableItem}>
-                                            <p className={styles.paragraph}>
-                                                <Link to={`/patients/${patient.id}`} className={styles.cardLink}>
-                                                    {patient.nome}
-                                                </Link>
-                                            </p>
-                                        </td>
-                                        <td className={styles.tableItem}>
-                                            <p className={styles.paragraph}>{patient.cpf}</p>
-                                        </td>
-                                        <td className={styles.tableItem}>
-                                            <div className={styles.actionsArea}>
-                                                <button title="Editar" className={styles.button} onClick={() => openModal(patient.id, 'edit')}>
-                                                    <Icon icon="prime:pencil" />
-                                                </button>
-                                                <button title="Excluir" className={styles.button} onClick={() => openModal(patient.id, 'delete')}>
-                                                    <Icon icon="ic:outline-delete" />
-                                                </button>
-                                            </div>
-                                        </td>
+                        <div className={styles.tableContainer}>
+                            <table className={styles.table}>
+                                <thead className={styles.tableHeader}>
+                                    <tr className={styles.tableRow}>
+                                        <th className={styles.tableItem}><h2 className={styles.secondaryTitle}>#</h2></th>
+                                        <th className={styles.tableItem}><h2 className={styles.secondaryTitle}>Nome</h2></th>
+                                        <th className={styles.tableItem}><h2 className={styles.secondaryTitle}>CPF</h2></th>
+                                        <th className={styles.tableItem}><h2 className={styles.secondaryTitle}>Ações</h2></th>
                                     </tr>
-                                ))}
-                            </tbody>
-                        </table>
+                                </thead>
+                                <tbody className={styles.tableBody}>
+                                    {patients.map((patient, i) => (
+                                        <tr className={styles.tableRow} key={patient.id}>
+                                            <td className={styles.tableItem}>
+                                                <p className={styles.paragraph}>{i + 1}</p>
+                                            </td>
+                                            <td className={styles.tableItem}>
+                                                <p className={styles.paragraph}>
+                                                    <Link to={`/patients/${patient.id}`} className={styles.cardLink}>
+                                                        {patient.nome}
+                                                    </Link>
+                                                </p>
+                                            </td>
+                                            <td className={styles.tableItem}>
+                                                <p className={styles.paragraph}>{patient.cpf}</p>
+                                            </td>
+                                            <td className={styles.tableItem}>
+                                                <div className={styles.actionsArea}>
+                                                    <button title="Editar" className={styles.button} onClick={() => openModal(patient.id, 'edit')}>
+                                                        <Icon icon="prime:pencil" />
+                                                    </button>
+                                                    <button title="Excluir" className={styles.button} onClick={() => openModal(patient.id, 'delete')}>
+                                                        <Icon icon="ic:outline-delete" />
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                        </div>
                     ) : (
                         <div className={styles.messageArea}>
                             <p className={styles.paragraph}>Cadastre pacientes para visualiza-los aqui.</p>

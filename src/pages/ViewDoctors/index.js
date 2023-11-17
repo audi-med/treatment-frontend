@@ -63,45 +63,47 @@ const ViewDoctors = () => {
                 </div>
                 {errorMessage === null ? (
                     doctors.length > 0 ? (
-                        <table className={styles.table}>
-                            <thead className={styles.tableHeader}>
-                                <tr className={styles.tableRow}>
-                                    <th className={styles.tableItem}><h2 className={styles.secondaryTitle}>#</h2></th>
-                                    <th className={styles.tableItem}><h2 className={styles.secondaryTitle}>Nome</h2></th>
-                                    <th className={styles.tableItem}><h2 className={styles.secondaryTitle}>CPF</h2></th>
-                                    <th className={styles.tableItem}><h2 className={styles.secondaryTitle}>Ações</h2></th>
-                                </tr>
-                            </thead>
-                            <tbody className={styles.tableBody}>
-                                {doctors.map((doctor, i) => (
-                                    <tr className={styles.tableRow} key={doctor.id}>
-                                        <td className={styles.tableItem}>
-                                            <p className={styles.paragraph}>{i + 1}</p>
-                                        </td>
-                                        <td className={styles.tableItem}>
-                                            <p className={styles.paragraph}>
-                                                <Link to={`/doctors/${doctor.id}`} className={styles.cardLink}>
-                                                    {doctor.nome}
-                                                </Link>
-                                            </p>
-                                        </td>
-                                        <td className={styles.tableItem}>
-                                            <p className={styles.paragraph}>{doctor.cpf}</p>
-                                        </td>
-                                        <td className={styles.tableItem}>
-                                            <div className={styles.actionsArea}>
-                                                <button title="Editar" className={styles.button} onClick={() => openModal(doctor.id, 'edit')}>
-                                                    <Icon icon="prime:pencil" />
-                                                </button>
-                                                <button title="Excluir" className={styles.button} onClick={() => openModal(doctor.id, 'delete')}>
-                                                    <Icon icon="ic:outline-delete" />
-                                                </button>
-                                            </div>
-                                        </td>
+                        <div className={styles.tableContainer}>
+                            <table className={styles.table}>
+                                <thead className={styles.tableHeader}>
+                                    <tr className={styles.tableRow}>
+                                        <th className={styles.tableItem}><h2 className={styles.secondaryTitle}>#</h2></th>
+                                        <th className={styles.tableItem}><h2 className={styles.secondaryTitle}>Nome</h2></th>
+                                        <th className={styles.tableItem}><h2 className={styles.secondaryTitle}>CPF</h2></th>
+                                        <th className={styles.tableItem}><h2 className={styles.secondaryTitle}>Ações</h2></th>
                                     </tr>
-                                ))}
-                            </tbody>
-                        </table>
+                                </thead>
+                                <tbody className={styles.tableBody}>
+                                    {doctors.map((doctor, i) => (
+                                        <tr className={styles.tableRow} key={doctor.id}>
+                                            <td className={styles.tableItem}>
+                                                <p className={styles.paragraph}>{i + 1}</p>
+                                            </td>
+                                            <td className={styles.tableItem}>
+                                                <p className={styles.paragraph}>
+                                                    <Link to={`/doctors/${doctor.id}`} className={styles.cardLink}>
+                                                        {doctor.nome}
+                                                    </Link>
+                                                </p>
+                                            </td>
+                                            <td className={styles.tableItem}>
+                                                <p className={styles.paragraph}>{doctor.cpf}</p>
+                                            </td>
+                                            <td className={styles.tableItem}>
+                                                <div className={styles.actionsArea}>
+                                                    <button title="Editar" className={styles.button} onClick={() => openModal(doctor.id, 'edit')}>
+                                                        <Icon icon="prime:pencil" />
+                                                    </button>
+                                                    <button title="Excluir" className={styles.button} onClick={() => openModal(doctor.id, 'delete')}>
+                                                        <Icon icon="ic:outline-delete" />
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                        </div>
                     ) : (
                         <div className={styles.messageArea}>
                             <p className={styles.paragraph}>Cadastre médicos para visualiza-los aqui.</p>
