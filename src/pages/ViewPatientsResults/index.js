@@ -56,10 +56,6 @@ const ViewPatientsResults = () => {
                             Filtrar
                         </button>
                     </div>
-                    <button className={styles.primaryButton} onClick={() => openModal(null, 'register')}>
-                        <Icon className={styles.icon} icon="akar-icons:plus" />
-                        Cadastrar paciente
-                    </button>
                 </div>
                 {errorMessage === null ? (
                     patients.length > 0 ? (
@@ -105,25 +101,6 @@ const ViewPatientsResults = () => {
                 ) : (
                     <div className={styles.messageArea}>
                         <p className={styles.errorMessage}>{errorMessage}</p>
-                    </div>
-                )}
-                {selectedAction === 'register' && (
-                    <Modal onClose={closeModal}>
-                        <RegisterPatient onClose={closeModal} />
-                    </Modal>
-                )}
-                {selectedItem !== null && (
-                    <div>
-                        {selectedAction === 'edit' && (
-                            <Modal onClose={closeModal}>
-                                <EditPatient id={selectedItem} onClose={closeModal} />
-                            </Modal>
-                        )}
-                        {selectedAction === 'delete' && (
-                            <Modal onClose={closeModal}>
-                                <DeletePatient id={selectedItem} onClose={closeModal} />
-                            </Modal>
-                        )}
                     </div>
                 )}
             </div>
