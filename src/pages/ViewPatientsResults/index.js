@@ -2,16 +2,10 @@ import { React, useState, useEffect } from "react";
 import styles from "./styles.module.css";
 import { Link } from "react-router-dom";
 import { Icon } from '@iconify/react';
-import Modal from "../../components/Modal";
-import RegisterPatient from "../../components/RegisterPatient";
-import EditPatient from "../../components/EditPatient";
-import DeletePatient from "../../components/DeletePatient";
 
 const ViewPatientsResults = () => {
     const [patients, setPatients] = useState([])
     const [errorMessage, setErrorMessage] = useState(null)
-    const [selectedItem, setSelectedItem] = useState(null)
-    const [selectedAction, setSelectedAction] = useState(null)
 
     useEffect(() => {
         const consult = async () => {
@@ -28,16 +22,6 @@ const ViewPatientsResults = () => {
         }
         consult()
     }, [])
-
-    const openModal = (id, action) => {
-        setSelectedItem(id)
-        setSelectedAction(action)
-    }
-
-    const closeModal = () => {
-        setSelectedItem(null)
-        setSelectedAction(null)
-    }
 
     return (
         <div className={styles.container}>
