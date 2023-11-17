@@ -2,7 +2,7 @@ import { React, useState, useEffect } from "react";
 import styles from "./styles.module.css";
 import { Icon } from '@iconify/react';
 
-const RegisterPatient = ({onClose}) => {
+const RegisterPatient = ({ onClose }) => {
     const [nome, setNome] = useState("")
     const [cpf, setCPF] = useState("")
     const [dataDeNascimento, setDataDeNascimento] = useState("")
