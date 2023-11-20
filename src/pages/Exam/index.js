@@ -70,7 +70,7 @@ const Exam = () => {
                 <div>
                     <div className={styles.topArea}>
                         <a className={styles.button} href="/patient">
-                            <Icon icon="tabler:x" />
+                            <Icon icon="ep:arrow-left" />
                         </a>
                     </div>
                     <h1 className={styles.primaryTitle}>Tratamento</h1>
