@@ -8,6 +8,7 @@ import ViewReceptionist from "../pages/ViewReceptionist";
 import ViewPatientsResults from "../pages/ViewPatientsResults";
 import ViewPatients from "../pages/ViewPatients";
 import ViewPatient from "../pages/ViewPatient";
+import Patient from "../pages/Patient";
 import Exam from "../pages/Exam";
 
 const PagesRoutes = () => {
@@ -24,7 +25,8 @@ const PagesRoutes = () => {
                 <Route path="/patients/results/:id" element={<ViewPatientsResults/>}/>
                 <Route path="/patients" element={<ViewPatients/>}/>
                 <Route path="/patients/:id" element={<ViewPatient/>}/>
-                <Route path="/exam" element={<Exam/>}/>
+                <Route path="/patient/" element={<Patient/>}/>
+                <Route path="//patient/treatment" element={<Exam/>}/>
             </Routes>
         </Router>
     )

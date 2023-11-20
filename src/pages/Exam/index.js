@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react"
-import styles from "./styles.module.css"
+import React, { useState, useEffect } from "react";
+import styles from "./styles.module.css";
+import { Icon } from '@iconify/react';
  
 const Exam = () => {
     const [audioPairs, setAudioPairs] = useState([])
@@ -66,7 +67,14 @@ const Exam = () => {
     return (
         <div className={styles.container}>
             <div className={styles.contentArea}>
-                <h1 className={styles.primaryTitle}>Tratamento</h1>
+                <div>
+                    <div className={styles.topArea}>
+                        <a className={styles.button} href="/patient">
+                            <Icon icon="tabler:x" />
+                        </a>
+                    </div>
+                    <h1 className={styles.primaryTitle}>Tratamento</h1>
+                </div>
                 {errorMessage === null ? (
                     <div className={styles.dataArea}>
                         <div className={styles.audioArea}>
