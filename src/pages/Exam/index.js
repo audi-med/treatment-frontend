@@ -77,7 +77,7 @@ const Exam = () => {
  
     const playAudio = () => {
         const currentPair = audioPairs[currentPairIndex]
-        const audio = new Audio(`data:audio/wavbase64,${currentPair.audio}`)
+        const audio = new Audio(`data:audio/wav;base64,${currentPair.audio}`)
         audio.play()
     }
  
