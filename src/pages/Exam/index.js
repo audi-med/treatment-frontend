@@ -56,10 +56,10 @@ const Exam = () => {
             setAnswered(false)
         }
     }
- 
+
     const handleFinalize = async () => {
         try {
-            const response = await fetch("http://localhost:8080/api/v1/pacientes/cadastro", {
+            const response = await fetch("http://localhost:8080/api/v1/tratamento/resultado", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -69,7 +69,7 @@ const Exam = () => {
             if (!response.ok) {
                 throw new Error("Erro ao cadastrar os resultados.")
             }
-            navigate('/patient')
+            navigate("/patient")
         } catch (error) {
             setErrorMessage("Erro ao cadastrar os resultados. Verifique os dados informados.")
         }
