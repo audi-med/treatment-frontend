@@ -70,7 +70,7 @@ const ViewPatientsResults = () => {
                                                 <p className={styles.paragraph}>{patient.cpf}</p>
                                             </td>
                                             <td className={styles.tableItem}>
-                                                <p className={styles.paragraph}>{patient.cpf}</p>
+                                                <p className={styles.paragraph}>{patient.result}</p>
                                             </td>
                                         </tr>
                                     ))}
