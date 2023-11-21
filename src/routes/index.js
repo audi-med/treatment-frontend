@@ -26,7 +26,7 @@ const PagesRoutes = () => {
                 <Route path="/patients" element={<ViewPatients/>}/>
                 <Route path="/patients/:id" element={<ViewPatient/>}/>
                 <Route path="/patient/" element={<Patient/>}/>
-                <Route path="//patient/treatment" element={<Exam/>}/>
+                <Route path="/patient/treatment" element={<Exam/>}/>
             </Routes>
         </Router>
     )

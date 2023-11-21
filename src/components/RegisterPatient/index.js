@@ -1,4 +1,4 @@
-import { React, useState, useEffect } from "react";
+import { React, useState } from "react";
 import styles from "./styles.module.css";
 import { Icon } from '@iconify/react';
 import InputMask from 'react-input-mask';
@@ -46,11 +46,8 @@ const RegisterPatient = ({ onClose }) => {
         }
     }
 
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    const senhaRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-
-
-
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    const senhaRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/
 
     return (
         <div className={styles.container}>
@@ -100,7 +97,6 @@ const RegisterPatient = ({ onClose }) => {
                     <label htmlFor="address-input">Endereço</label>
                     <input id="address-input" className={styles.input} onChange={(e) => setEndereco(e.target.value)} type="text" required />
                 </div>
-
                 <div className={styles.inputField}>
                     <label htmlFor="email-input">E-mail</label>
                     <input id="email-input" className={styles.input} onChange={(e) => setEmail(e.target.value)} type="text" required />
@@ -108,20 +104,13 @@ const RegisterPatient = ({ onClose }) => {
                         <span className={styles.errorMessage}><Icon icon="mdi:alert-circle-outline" /> Digite um e-mail válido.</span>
                     )}
                 </div>
-
-
-
                 <div className={styles.inputField}>
                     <label htmlFor="password-input">Senha</label>
                     <input id="password-input" className={styles.input} onChange={(e) => setSenha(e.target.value)} type="password" required />
                     {senha && !senhaRegex.test(senha) && (
-                        <span className={styles.errorMessage}>
-                            A senha deve conter pelo menos 8 caracteres, incluindo letras maiúsculas, minúsculas, números e caracteres especiais.
-                        </span>
+                        <span className={styles.errorMessage}>A senha deve conter pelo menos 8 caracteres, incluindo letras maiúsculas, minúsculas, números e caracteres especiais.</span>
                     )}
                 </div>
-
-
                 <div className={styles.inputField}>
                     <label htmlFor="responsible-name-input">Nome do responsável</label>
                     <input id="responsible-name-input" className={styles.input} onChange={(e) => setNomeDoResponsavel(e.target.value)} type="text" required />
