@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styles from "./styles.module.css";
 import { Icon } from '@iconify/react';
+import { useNavigate } from 'react-router-dom';
  
 const Exam = () => {
     const [audioPairs, setAudioPairs] = useState([])
@@ -10,6 +11,8 @@ const Exam = () => {
     const [answered, setAnswered] = useState(false)
     const [correctAnswer, setCorrectAnswer] = useState(false)
     const responses = []
+
+    const navigate = useNavigate()
  
     useEffect(() => {
         const fetchData = async () => {
@@ -54,8 +57,22 @@ const Exam = () => {
         }
     }
  
-    const handleFinalize = () => {
-        // Adicione a lógica para finalizar o tratamento, se necessário
+    const handleFinalize = async () => {
+        try {
+            const response = await fetch("http://localhost:8080/api/v1/pacientes/cadastro", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(responses)
+            })
+            if (!response.ok) {
+                throw new Error("Erro ao cadastrar os resultados.")
+            }
+            navigate('/patient')
+        } catch (error) {
+            setErrorMessage("Erro ao cadastrar os resultados. Verifique os dados informados.")
+        }
     }
  
     const playAudio = () => {
