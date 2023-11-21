@@ -69,7 +69,7 @@ const Exam = () => {
             if (!response.ok) {
                 throw new Error("Erro ao cadastrar os resultados.")
             }
-            navigate('/patient')
+            navigate("/patient")
         } catch (error) {
             setErrorMessage("Erro ao cadastrar os resultados. Verifique os dados informados.")
         }
