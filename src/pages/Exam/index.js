@@ -59,7 +59,7 @@ const Exam = () => {
 
     const handleFinalize = async () => {
         try {
-            const response = await fetch("http://localhost:8080/api/v1/tratamento/resultado", {
+            const response = await fetch("http://localhost:8080/api/v1/tratamento/resultados/cadastro", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"

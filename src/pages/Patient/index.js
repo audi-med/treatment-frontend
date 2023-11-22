@@ -8,7 +8,7 @@ const Patient = () => {
                 <h1 className={styles.primaryTitle}>O que deseja fazer?</h1>
                 <div className={styles.buttonsArea}>
                     <a className={styles.primaryButton} href="/patient/treatment">Realizar tratamento</a>
-                    <a className={styles.primaryButton} href="">Ver resultados</a>
+                    <a className={styles.primaryButton} href="/patient/results">Ver resultados</a>
                 </div>
             </div>
         </div>
