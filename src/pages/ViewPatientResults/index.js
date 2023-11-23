@@ -31,7 +31,7 @@ const ViewPatientResults = () => {
         <div className={styles.container}>
             <div className={styles.contentArea}>
                 <h1 className={styles.primaryTitle}>Paciente</h1>
-                {errorMessage !== null ? (
+                {errorMessage === null ? (
                     <div className={styles.dataArea}>
                         <div className={styles.dataContainer}>
                             <p>Nome: {patient.nome}</p>
@@ -43,7 +43,7 @@ const ViewPatientResults = () => {
                             <p>CPF do responsavel: {patient.cpfDoResponsavel}</p>
                         </div>
                         <div className={styles.chartArea}>
-                            <h2 className={styles.primaryTitle}>Resultados</h2>
+                            <h2 className={styles.secondaryTitle}>Resultados</h2>
                             <div className={styles.chartContainer}>
                                 <ResponsiveContainer width="100%" height={400}>
                                     <LineChart data={results}>

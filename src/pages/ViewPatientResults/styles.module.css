@@ -44,6 +44,10 @@
     width: 100%;
 }
 
+.secondaryTitle {
+    font-size: 1.25rem;
+}
+
 .chartContainer {
     display: flex;
     height: 100%;
