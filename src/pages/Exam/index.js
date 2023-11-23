@@ -48,12 +48,14 @@ const Exam = () => {
     const decreaseIndex = () => {
         if (currentPairIndex > 0) {
             setCurrentPairIndex(currentPairIndex - 1)
+            setWord("")
         }
     }
  
     const increaseIndex = () => {
         if (currentPairIndex < audioPairs.length - 1) {
             setCurrentPairIndex(currentPairIndex + 1)
+            setWord("")
             setAnswered(false)
         }
     }
@@ -109,7 +111,7 @@ const Exam = () => {
                         </div>
                         <div className={styles.inputField}>
                             <label htmlFor="word-input">Digite a palavra do áudio</label>
-                            <input id="word-input" className={styles.input} onChange={(e) => setWord(e.target.value)} type="text" required />
+                            <input id="word-input" className={styles.input} onChange={(e) => setWord(e.target.value)} value={word} type="text" required />
                         </div>
                         <button className={styles.primaryButton} onClick={handleVerify}>
                             Verificar resposta
