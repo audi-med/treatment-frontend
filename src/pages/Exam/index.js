@@ -97,18 +97,16 @@ const Exam = () => {
                 </div>
                 {errorMessage === null ? (
                     <div className={styles.dataArea}>
-                        <div className={styles.audioArea}>
-                            {audioPairs.length > 0 && (
-                                <div>
-                                    <button className={styles.secondaryButton} onClick={playAudio}>Reproduzir Áudio</button>
-                                    {answered && (
-                                        <p className={correctAnswer ? styles.correctAnswer : styles.incorrectAnswer}>
-                                            {correctAnswer ? "Resposta correta" : "Resposta incorreta"}
-                                        </p>
-                                    )}
-                                </div>
-                            )}
-                        </div>
+                        {audioPairs.length > 0 && (
+                            <div className={styles.audioArea}>
+                                <button className={styles.secondaryButton} onClick={playAudio}>Reproduzir Áudio</button>
+                                {answered && (
+                                    <p className={correctAnswer ? styles.correctAnswer : styles.incorrectAnswer}>
+                                        {correctAnswer ? "Resposta correta" : "Resposta incorreta"}
+                                    </p>
+                                )}
+                            </div>
+                        )}
                         <div className={styles.inputField}>
                             <label htmlFor="word-input">Digite a palavra do áudio</label>
                             <input id="word-input" className={styles.input} onChange={(e) => setWord(e.target.value)} value={word} type="text" required />
