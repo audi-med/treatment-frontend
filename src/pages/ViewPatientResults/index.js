@@ -4,10 +4,11 @@ import { useParams } from "react-router-dom";
 import { ResponsiveContainer, LineChart, Line, CartesianGrid, XAxis, YAxis, Label, Tooltip } from 'recharts';
 
 const ViewPatientResults = () => {
-    const [patient, setPatient] = useState([]);
-    const [errorMessage, setErrorMessage] = useState(null);
+    const [patient, setPatient] = useState([])
+    const [errorMessage, setErrorMessage] = useState(null)
+    const [results, setResults] = useState([])
 
-    const {id} = useParams();
+    const {id} = useParams()
     
     useEffect(() => {
         const consult = async () => {
@@ -25,7 +26,21 @@ const ViewPatientResults = () => {
         consult()
     }, [id])
 
-    const results = [{result: 75, date: "02/05/2023"}, {result: 83, date: "03/05/2023"}, {result: 91, date: "04/05/2023"}]
+    useEffect(() => {
+        const consult = async () => {
+            try {
+                const response = await fetch("http://localhost:8080/api/v1/tratamento/resultados")
+                if (!response.ok) {
+                    throw new Error()
+                }
+                const data = await response.json()
+                setResults(data)
+            } catch (error) {
+                setErrorMessage("Erro ao exibir os resultados do paciente.")
+            }
+        }
+        consult()
+    }, [])
 
     return (
         <div className={styles.container}>
