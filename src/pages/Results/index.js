@@ -4,10 +4,10 @@ import { Icon } from '@iconify/react';
 import { ResponsiveContainer, LineChart, Line, CartesianGrid, XAxis, YAxis, Label, Tooltip } from 'recharts';
  
 const Results = () => {
-    /*const [results, setResults] = useState([])*/
+    const [results, setResults] = useState([])
     const [errorMessage, setErrorMessage] = useState(null)
 
-    /*useEffect(() => {
+    useEffect(() => {
         const consult = async () => {
             try {
                 const response = await fetch("http://localhost:8080/api/v1/tratamento/resultados")
@@ -21,9 +21,7 @@ const Results = () => {
             }
         }
         consult()
-    }, [])*/
-
-    const results = [{result: 75, date: "02/05/2023"}, {result: 83, date: "03/05/2023"}, {result: 91, date: "04/05/2023"}]
+    }, [])
 
     return (
         <div className={styles.container}>
