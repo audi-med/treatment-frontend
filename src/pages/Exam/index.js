@@ -10,7 +10,7 @@ const Exam = () => {
     const [word, setWord] = useState("")
     const [answered, setAnswered] = useState(false)
     const [correctAnswer, setCorrectAnswer] = useState(false)
-    const responses = []
+    var responses = []
     const [warning, setWarning] = useState(null)
 
     const navigate = useNavigate()
