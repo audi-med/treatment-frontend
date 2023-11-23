@@ -37,7 +37,7 @@ const Results = () => {
                     <h1 className={styles.primaryTitle}>Resultados</h1>
                 </div>
                 {errorMessage === null ? (
-                    <div className={styles.chartArea}>
+                    <div className={styles.chartContainer}>
                         <ResponsiveContainer width="100%" height={400}>
                             <LineChart data={results}>
                                 <Line name="Porcentagem de acertos" type="monotone" dataKey="result" stroke="#8884d8" unit="%" />
