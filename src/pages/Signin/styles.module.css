@@ -73,6 +73,14 @@
     margin-bottom: 1rem;
 }
 
+/*------------ERRO -------------------*/
+.errorMessage {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px; /* Adapte conforme necessário */
+  }
+
+  
 @media screen and (max-width: 480px) {
     .container {
         background-color: #fff;

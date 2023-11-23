@@ -18,6 +18,8 @@ const RegisterReceptionist = ({ onClose }) => {
             senha
         }
 
+
+
         try {
             const response = await fetch("http://localhost:8080/api/v1/recepcionistas/cadastro", {
                 method: "POST",
@@ -69,7 +71,7 @@ const RegisterReceptionist = ({ onClose }) => {
                     <label htmlFor="password-input">Senha</label>
                     <input id="password-input" className={styles.input} onChange={(e) => setSenha(e.target.value)} type="password" required/>
                     {senha && !senhaRegex.test(senha) && (
-                        <span className={styles.errorMessage}>A senha deve conter pelo menos 8 caracteres, incluindo letras maiúsculas, minúsculas, números e caracteres especiais.</span>
+                        <span className={styles.errorMessage}><Icon icon="mdi:alert-circle-outline" /> A senha deve conter pelo menos 8 caracteres, incluindo letras maiúsculas, minúsculas, números e caracteres especiais.</span>
                     )}
                 </div>
                 <button className={styles.primaryButton} onClick={handleRegister} type="submit">Cadastrar</button>

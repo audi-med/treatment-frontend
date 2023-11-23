@@ -7,16 +7,18 @@
 
 .primaryTitle {
     font-size: 1.5rem;
+}
+
+.topArea {
     text-align: center;
 }
 
-.primaryTitle, .errorMessage {
+.primaryTitle, .topArea {
     margin-bottom: 1.5rem;
 }
 
 .errorMessage {
     color: #f00;
-    text-align: center;
 }
 
 .inputField {
