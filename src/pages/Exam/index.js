@@ -11,6 +11,7 @@ const Exam = () => {
     const [answered, setAnswered] = useState(false)
     const [correctAnswer, setCorrectAnswer] = useState(false)
     const responses = []
+    const [warning, setWarning] = useState(null)
 
     const navigate = useNavigate()
  
@@ -71,7 +72,7 @@ const Exam = () => {
             }
             navigate("/patient")
         } catch (error) {
-            setErrorMessage("Erro ao cadastrar os resultados. Verifique os dados informados.")
+            setWarning("Erro ao cadastrar os resultados. Verifique os dados informados.")
         }
     }
  
@@ -129,6 +130,7 @@ const Exam = () => {
                                 </button>
                             )}
                         </div>
+                        {warning && <p className={styles.errorMessage}>{warning}</p>}
                     </div>
                 ) : (
                     <div className={styles.messageArea}>
