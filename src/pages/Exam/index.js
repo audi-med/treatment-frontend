@@ -65,7 +65,7 @@ const Exam = () => {
                 headers: {
                     "Content-Type": "application/json"
                 },
-                body: JSON.stringify(responses)
+                body: JSON.stringify({resultados: responses})
             })
             if (!response.ok) {
                 throw new Error("Erro ao cadastrar os resultados.")
