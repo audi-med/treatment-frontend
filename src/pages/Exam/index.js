@@ -10,7 +10,7 @@ const Exam = () => {
     const [word, setWord] = useState("")
     const [answered, setAnswered] = useState(false)
     const [correctAnswer, setCorrectAnswer] = useState(false)
-    var responses = []
+    const [responses, setResponses] = useState([])
     const [warning, setWarning] = useState(null)
 
     const navigate = useNavigate()
@@ -42,7 +42,12 @@ const Exam = () => {
  
         setAnswered(true)
         setCorrectAnswer(isCorrect)
-        responses[currentPairIndex] = isCorrect
+        
+        setResponses(prevResponses => {
+            const newResponses = [...prevResponses]
+            newResponses[currentPairIndex] = isCorrect
+            return newResponses
+        })
     }
  
     const decreaseIndex = () => {
