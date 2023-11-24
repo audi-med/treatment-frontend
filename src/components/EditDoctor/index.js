@@ -4,7 +4,7 @@ import InputMask from 'react-input-mask';
 import { Icon } from '@iconify/react';
 
 const EditDoctor = ({ id, onClose }) => {
-    useEffect((id) => {
+    useEffect(() => {
         const consult = async () => {
             try {
                 const response = await fetch("http://localhost:8080/api/v1/medicos/" + id)
@@ -24,7 +24,7 @@ const EditDoctor = ({ id, onClose }) => {
             }
         }
         consult()
-    }, [])
+    }, [id])
 
     const [nome, setNome] = useState("")
     const [cpf, setCPF] = useState("")

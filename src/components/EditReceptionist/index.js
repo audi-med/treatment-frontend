@@ -5,7 +5,7 @@ import { Icon } from '@iconify/react';
 
 
 const EditReceptionist = ({ id, onClose }) => {
-    useEffect((id) => {
+    useEffect(() => {
         const consult = async () => {
             try {
                 const response = await fetch("http://localhost:8080/api/v1/recepcionistas/" + id)
@@ -22,7 +22,7 @@ const EditReceptionist = ({ id, onClose }) => {
             }
         }
         consult()
-    }, [])
+    }, [id])
 
     const [nome, setNome] = useState("")
     const [cpf, setCPF] = useState("")
