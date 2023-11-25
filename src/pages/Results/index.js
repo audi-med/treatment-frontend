@@ -38,9 +38,9 @@ const Results = () => {
                     <div className={styles.chartContainer}>
                         <ResponsiveContainer width="100%" height={400}>
                             <LineChart data={results}>
-                                <Line name="Porcentagem de acertos" type="monotone" dataKey="result" stroke="#8884d8" unit="%" />
+                                <Line name="Porcentagem de acertos" type="monotone" dataKey="resultado" stroke="#8884d8" unit="%" />
                                 <CartesianGrid stroke="#ccc" />
-                                <XAxis dataKey="date">
+                                <XAxis dataKey="data">
                                     <Label value="Data" offset={0} position="insideBottom" />
                                 </XAxis>
                                 <YAxis unit="%">
