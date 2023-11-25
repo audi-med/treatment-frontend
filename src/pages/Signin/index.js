@@ -7,6 +7,7 @@ const Signin = () => {
     const [senha, setSenha] = useState('');
     const [emailErro, setEmailErro] = useState('');
     const [senhaErro, setSenhaErro] = useState('');
+    const [type, setType] = useState(null)
 
     const validarEmail = () => {
         setEmailErro('');
@@ -30,12 +31,6 @@ const Signin = () => {
         e.preventDefault();
         validarEmail();
         validarSenha();
-
-        // Aqui você pode adicionar lógica adicional para o login se os campos estiverem válidos
-        if (!emailErro && !senhaErro) {
-            // Lógica de login aqui
-            console.log('Login válido!');
-        }
     };
 
     return (
@@ -46,6 +41,7 @@ const Signin = () => {
                     <div className={styles.inputField}>
                         <label className={styles.label} htmlFor="email-input">E-mail</label>
                         <input
+                            id="email-input"
                             className={styles.input}
                             type="text"
                             value={email}
@@ -58,6 +54,7 @@ const Signin = () => {
                     <div className={styles.inputField}>
                         <label className={styles.label} htmlFor="password-input">Senha</label>
                         <input
+                            id="password-input"
                             className={styles.input}
                             type="password"
                             value={senha}
@@ -66,6 +63,15 @@ const Signin = () => {
                             required
                         />
                         {senhaErro && <span className={styles.errorMessage}><Icon icon="mdi:alert-circle-outline" /> {senhaErro}</span>}
+                    </div>
+                    <div className={styles.inputField}>
+                        <label className={styles.label} htmlFor="type-select">Tipo de login</label>
+                        <select id="type-select" className={styles.input} value={type} onChange={(e) => setType(e.target.value)} required>
+                            <option value={0}>Paciente</option>
+                            <option value={1}>Recepcionista</option>
+                            <option value={2}>Médico</option>
+                            <option value={3}>Dono de hospital</option>
+                        </select>
                     </div>
                     <div className={styles.linksArea}>
                         <a className={styles.link} href="">Esqueceu a senha?</a>
